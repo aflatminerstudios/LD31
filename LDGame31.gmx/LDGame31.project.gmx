@@ -48,6 +48,7 @@
       <object>objects\objGoal</object>
       <object>objects\objGoalBird</object>
     </objects>
+    <object>objects\objAnimalControl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
