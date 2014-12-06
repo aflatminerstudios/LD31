@@ -1,8 +1,6 @@
 ///scrCalcRotation(phy_X)
 
-var xPos = argument0;
-var yPos = argument1;
-var xPhy = argument2;
+var xPhy = argument0;
 
 var bX = objFakeFloor.beginX;
 var eX = objFakeFloor.endX;

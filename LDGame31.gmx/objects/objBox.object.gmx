@@ -80,16 +80,7 @@ if (keyboard_check(vk_left)) {
             <kind>1</kind>
             <string>///Draw the sprite
 
-var retVal = scrLineToCircle(phy_position_x,phy_position_y);
-
-x = retVal[0];
-y = retVal[1];
-
-var rot = scrCalcRotation(x, y, phy_position_x);
-
-draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, rot, c_white, 1);
-
-//draw_self();
+scrDrawToCircle(self.id);
 </string>
           </argument>
         </arguments>

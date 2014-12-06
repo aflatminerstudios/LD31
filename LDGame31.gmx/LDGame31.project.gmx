@@ -24,6 +24,7 @@
     <script>scripts\scrPickupObject.gml</script>
     <script>scripts\scrReleaseObject.gml</script>
     <script>scripts\scrThrowBird.gml</script>
+    <script>scripts\scrDrawToCircle.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objBox</object>
@@ -39,6 +40,7 @@
     </objects>
     <object>objects\objAnimal</object>
     <object>objects\objAnimalBird</object>
+    <object>objects\objControl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
