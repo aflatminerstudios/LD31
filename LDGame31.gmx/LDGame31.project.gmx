@@ -10,6 +10,7 @@
     <sprite>sprites\sprFakeFloor</sprite>
     <sprite>sprites\sprBox</sprite>
     <sprite>sprites\sprPlayer</sprite>
+    <sprite>sprites\sprBird</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -19,6 +20,7 @@
     <script>scripts\scrPlayerAttack.gml</script>
     <script>scripts\scrPickupObject.gml</script>
     <script>scripts\scrReleaseObject.gml</script>
+    <script>scripts\scrThrowBird.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objTire</object>
@@ -30,6 +32,8 @@
     <object>objects\objPlayer</object>
     <object>objects\objCircle</object>
     <object>objects\objCircleEnd</object>
+    <object>objects\objAnimal</object>
+    <object>objects\objAnimalBird</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
