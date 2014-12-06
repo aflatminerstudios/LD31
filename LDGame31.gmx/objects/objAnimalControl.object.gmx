@@ -68,7 +68,7 @@ instance_create(threeGoalPosX[2], objFakeFloor.y, objGoalBird);
           <argument>
             <kind>1</kind>
             <string>/// Spawn birds!
-if spawnTimer == 0 &amp;&amp; birdCount &lt; 5
+if spawnTimer == 0 &amp;&amp; animalCount &lt; 5
 {
     var distance = objFakeFloor.endX - objFakeFloor.beginX;
     instance_create(irandom(distance), objFakeFloor.y, objAnimalBird);
