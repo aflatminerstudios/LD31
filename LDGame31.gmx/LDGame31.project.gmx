@@ -14,7 +14,8 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scrTranslate.gml</script>
+    <script>scripts\scrLineToCircle.gml</script>
+    <script>scripts\scrLoopX.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objTire</object>

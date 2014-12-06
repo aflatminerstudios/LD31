@@ -27,16 +27,7 @@
             <kind>1</kind>
             <string>///Check for end of side
 
-fakeFloorBegin = objFakeFloor.phy_position_x + 10;
-fakeFloorEnd = fakeFloorBegin + objFakeFloor.sprite_width - 20;
-
-
-
-if (phy_position_x &gt;= fakeFloorEnd) {
-    phy_position_x = fakeFloorBegin;
-} else if (phy_position_x &lt; fakeFloorBegin) {
-    phy_position_x = fakeFloorEnd;
-}
+phy_position_x = scrLoopX(phy_position_x);
 </string>
           </argument>
         </arguments>
