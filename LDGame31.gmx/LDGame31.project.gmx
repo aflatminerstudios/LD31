@@ -37,8 +37,10 @@
       <object>objects\objCircleStart</object>
       <object>objects\objTire</object>
     </objects>
-    <object>objects\objAnimal</object>
-    <object>objects\objAnimalBird</object>
+    <objects name="Animals">
+      <object>objects\objAnimalBird</object>
+      <object>objects\objAnimal</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
