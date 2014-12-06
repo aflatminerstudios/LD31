@@ -16,6 +16,9 @@
   <scripts name="scripts">
     <script>scripts\scrLineToCircle.gml</script>
     <script>scripts\scrLoopX.gml</script>
+    <script>scripts\scrPlayerAttack.gml</script>
+    <script>scripts\scrPickupObject.gml</script>
+    <script>scripts\scrReleaseObject.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objTire</object>

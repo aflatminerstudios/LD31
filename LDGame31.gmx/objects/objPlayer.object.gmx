@@ -28,6 +28,8 @@
             <string>/// Initialization
 onGround = true;
 airTime = 0;
+animal = noone;
+item = noone; // default to screen door
 </string>
           </argument>
         </arguments>
@@ -83,7 +85,15 @@ if phy_linear_velocity_y == 0
 
 if keyboard_check_pressed(vk_control) || keyboard_check_pressed(vk_down)
 {
-    show_debug_message("Bang!");
+    if animal != noone
+    {
+        /// throw animal
+        show_debug_message("Throw!");
+        scrReleaseObject(self, animal);
+    } else {
+        /// use item
+        scrPlayerAttack();
+    }
 }
 </string>
           </argument>
