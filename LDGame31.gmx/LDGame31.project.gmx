@@ -11,6 +11,7 @@
     <sprite>sprites\sprBox</sprite>
     <sprite>sprites\sprPlayer</sprite>
     <sprite>sprites\sprBird</sprite>
+    <sprite>sprites\sprGoal</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -42,6 +43,10 @@
     <objects name="Animals">
       <object>objects\objAnimalBird</object>
       <object>objects\objAnimal</object>
+    </objects>
+    <objects name="Goals">
+      <object>objects\objGoal</object>
+      <object>objects\objGoalBird</object>
     </objects>
   </objects>
   <rooms name="rooms">
