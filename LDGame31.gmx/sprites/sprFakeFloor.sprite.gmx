@@ -8,16 +8,16 @@
   <sepmasks>-1</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>1914</bbox_right>
-  <bbox_top>8</bbox_top>
-  <bbox_bottom>10</bbox_bottom>
+  <bbox_right>1825</bbox_right>
+  <bbox_top>9</bbox_top>
+  <bbox_bottom>11</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>1915</width>
+  <width>1826</width>
   <height>20</height>
   <frames>
     <frame index="0">images\sprFakeFloor_0.png</frame>

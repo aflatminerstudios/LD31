@@ -25,6 +25,8 @@
     <object>objects\objStaticParent</object>
     <object>objects\objFakeFloor</object>
     <object>objects\objPlayer</object>
+    <object>objects\objCircle</object>
+    <object>objects\objCircleEnd</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>

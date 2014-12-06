@@ -53,6 +53,7 @@
   <instances>
     <instance objName="objBox" x="432" y="224" name="inst_A1E52778" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFakeFloor" x="0" y="352" name="inst_33A975E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCircle" x="496" y="304" name="inst_56A324D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
