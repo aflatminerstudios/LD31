@@ -42,9 +42,9 @@ fourGoalPosX[1] = distance / 2;
 fourGoalPosX[2] = distance * 3 / 4;
 fourGoalPosX[3] = distance;
 
-instance_create(threeGoalPosX[0], objFakeFloor.y, objGoalBird);
-instance_create(threeGoalPosX[1], objFakeFloor.y, objGoalBird);
-instance_create(threeGoalPosX[2], objFakeFloor.y, objGoalBird);
+instance_create(threeGoalPosX[0], objFakeFloor.y - 64, objGoalBird);
+instance_create(threeGoalPosX[1], objFakeFloor.y - 64, objGoalBird);
+instance_create(threeGoalPosX[2], objFakeFloor.y - 64, objGoalBird);
 </string>
           </argument>
         </arguments>
@@ -67,12 +67,12 @@ instance_create(threeGoalPosX[2], objFakeFloor.y, objGoalBird);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Spawn birds!
-if spawnTimer == 0 &amp;&amp; animalCount &lt; 5
+            <string>/// SpawnTimer
+spawnTimer += 1;
+
+if spawnTimer == 500
 {
-    var distance = objFakeFloor.endX - objFakeFloor.beginX;
-    instance_create(irandom(distance), objFakeFloor.y, objAnimalBird);
-    animalCount += 1;
+    spawnTimer = 0;
 }
 </string>
           </argument>
@@ -94,12 +94,12 @@ if spawnTimer == 0 &amp;&amp; animalCount &lt; 5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// SpawnTimer
-spawnTimer += 1;
-
-if spawnTimer == 500
+            <string>/// Spawn birds!
+if spawnTimer == 0 &amp;&amp; animalCount &lt; 5
 {
-    spawnTimer = 0;
+    var distance = objFakeFloor.endX - objFakeFloor.beginX;
+    instance_create(irandom(distance), objFakeFloor.y, objAnimalBird);
+    animalCount += 1;
 }
 </string>
           </argument>

@@ -54,7 +54,10 @@ phy_position_x = scrLoopX(phy_position_x);
 score += 10;
 with (other) 
 {
-    instance_destroy();
+    if isHeld == false
+    {
+        instance_destroy();
+    }
 }
 objAnimalControl.animalCount -= 1;
 </string>
