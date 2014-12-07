@@ -42,9 +42,13 @@ fourGoalPosX[1] = distance / 2;
 fourGoalPosX[2] = distance * 3 / 4;
 fourGoalPosX[3] = distance;
 
-instance_create(threeGoalPosX[0], objFakeFloor.y - 64, objGoalBird);
-instance_create(threeGoalPosX[1], objFakeFloor.y - 64, objGoalBird);
-instance_create(threeGoalPosX[2], objFakeFloor.y - 64, objGoalBird);
+instance_create(threeGoalPosX[0], objFakeFloor.y - 64, objGoalDuck);
+instance_create(threeGoalPosX[1], objFakeFloor.y - 64, objGoalDuck);
+instance_create(threeGoalPosX[2], objFakeFloor.y - 64, objGoalDuck);
+
+instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
+instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
+animalCount += 2;
 </string>
           </argument>
         </arguments>
@@ -98,7 +102,7 @@ if spawnTimer == 500
 if spawnTimer == 0 &amp;&amp; animalCount &lt; 5
 {
     var distance = objFakeFloor.endX - objFakeFloor.beginX;
-    instance_create(irandom(distance), objFakeFloor.y, objAnimalBird);
+    instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
     animalCount += 1;
 }
 </string>

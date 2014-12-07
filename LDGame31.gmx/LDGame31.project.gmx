@@ -10,8 +10,12 @@
     <sprite>sprites\sprFakeFloor</sprite>
     <sprite>sprites\sprBox</sprite>
     <sprite>sprites\sprPlayer</sprite>
-    <sprite>sprites\sprBird</sprite>
     <sprite>sprites\sprGoal</sprite>
+    <sprites name="Duck">
+      <sprite>sprites\sprDuckIdle</sprite>
+      <sprite>sprites\sprDuckHeld</sprite>
+      <sprite>sprites\sprDuckThrown</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -26,8 +30,8 @@
     <script>scripts\scrPlayerAttack.gml</script>
     <script>scripts\scrPickupObject.gml</script>
     <script>scripts\scrReleaseObject.gml</script>
-    <script>scripts\scrThrowBird.gml</script>
     <script>scripts\scrCalcTheta.gml</script>
+    <script>scripts\scrThrowDuck.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objBox</object>
@@ -43,13 +47,13 @@
     </objects>
     <object>objects\objControl</object>
     <objects name="Animals">
-      <object>objects\objAnimalBird</object>
+      <object>objects\objAnimalDuck</object>
       <object>objects\objAnimal</object>
       <object>objects\objOldSchoolAnimal</object>
     </objects>
     <objects name="Goals">
       <object>objects\objGoal</object>
-      <object>objects\objGoalBird</object>
+      <object>objects\objGoalDuck</object>
     </objects>
     <object>objects\objAnimalControl</object>
   </objects>
