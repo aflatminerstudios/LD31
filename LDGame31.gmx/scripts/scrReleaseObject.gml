@@ -1,9 +1,9 @@
-/// scrPickupObject(actorInstance, objectInstance)
+/// srcReleaseObject(actorInstance, objectInstance)
 
 actorInstance = argument0;
 objectInstance = argument1;
 
-objectInstance.currentHolder = actorInstance;
+objectInstance.currentHolder = noone;
 objectInstance.isHeld = false;
 if objectInstance.objectType == "animal"
 {

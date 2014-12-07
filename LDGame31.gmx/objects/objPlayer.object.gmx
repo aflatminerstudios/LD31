@@ -31,7 +31,9 @@ airTime = 0;
 animal = noone;
 item = noone; // default to screen door
 facing = 1;
+
 lastAnimal = noone;
+collidedAgain = false;
 </string>
           </argument>
         </arguments>
@@ -181,6 +183,31 @@ if keyboard_check(vk_space) || keyboard_check(vk_up)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Reset collision detection for lastAnimal
+if !collidedAgain &amp;&amp; lastAnimal != noone
+{
+    lastAnimal = noone;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="objAnimal">
       <action>
@@ -202,17 +229,12 @@ if keyboard_check(vk_space) || keyboard_check(vk_up)
             <string>///Pick up animal
 if animal == noone
 {
-    var collidedAgain = false;
+    collidedAgain = false;
     
     if other.id != lastAnimal {
         scrPickupObject(self.id, other.id);
     } else {
         collidedAgain = true;
-    }
-    
-    if !collidedAgain 
-    {
-        lastAnimal = noone;
     }
 }
 </string>
