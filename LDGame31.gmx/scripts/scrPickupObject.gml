@@ -8,6 +8,7 @@ objectInstance.isHeld = true;
 if objectInstance.objectType == "animal"
 {
     actorInstance.animal = objectInstance;
+    objectInstance.sprite_index = objectInstance.spriteHeld;
 } else {
     actorInstance.item = objectInstance;
 }

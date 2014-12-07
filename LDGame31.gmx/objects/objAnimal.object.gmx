@@ -31,6 +31,12 @@ isHeld = false;
 currentHolder = noone;
 objectType = "animal";
 holdingOffset = 0;
+
+spriteIdle = 0;
+spriteHeld = 0;
+spriteThrown = 0;
+
+image_speed = 5 / room_speed;
 </string>
           </argument>
         </arguments>
@@ -70,6 +76,31 @@ if isHeld
     phy_position_x = scrLoopX(phy_position_x);
 }
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Reset Idle Animation
+if !isHeld &amp;&amp; phy_position_y == 0 &amp;&amp; phy_position_yprevious != 0
+{
+    sprite_index = spriteIdle;
+}
 </string>
           </argument>
         </arguments>
