@@ -75,10 +75,20 @@ drawToLine = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (drawToLine)
+            <string>if (drawToLine) {
     drawToLine = false;
-else
+    /*
+    objFakeFloor.phy_position_y += 1024;
+    y += 1024;
+    */
+}    
+else {
     drawToLine = true;
+    /*
+    objFakeFloor.phy_position_y -= 1024;
+    y -= 1024;
+    */
+}
 </string>
           </argument>
         </arguments>

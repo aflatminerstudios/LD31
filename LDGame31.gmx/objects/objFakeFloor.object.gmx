@@ -29,23 +29,14 @@
 
 beginX = phy_position_x + 10;
 endX = beginX + sprite_width - 20;
+
+/*
+phy_position_y += 1024;
+y += 1024;
+*/
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>0</libid>
-        <id>0</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
