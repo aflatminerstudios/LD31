@@ -51,15 +51,16 @@ phy_position_x = scrLoopX(phy_position_x);
           <argument>
             <kind>1</kind>
             <string>/// Goal!
-score += 10;
 with (other) 
 {
     if isHeld == false
     {
         instance_destroy();
+        score += 10;
+        objAnimalControl.animalCount -= 1;
     }
 }
-objAnimalControl.animalCount -= 1;
+
 </string>
           </argument>
         </arguments>
