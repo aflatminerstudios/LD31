@@ -262,13 +262,6 @@ if animal == noone
             <string>///Draw the sprite
 
 scrDrawToCircle(self.id);
-
-if facing == -1
-{
-    image_index = 0;
-} else {
-    image_index = 1;
-}
 </string>
           </argument>
         </arguments>

@@ -14,6 +14,6 @@ with (obj) {
         
         var rot = scrCalcRotation(phy_position_x);
         
-        draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, rot, c_white, 1);
+        draw_sprite_ext(sprite_index, image_index, x, y, facing, 1, rot, c_white, 1);
     }
 }
