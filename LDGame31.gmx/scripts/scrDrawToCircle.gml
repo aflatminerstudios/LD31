@@ -10,7 +10,7 @@ with (obj) {
         var retVal = scrLineToCircle(phy_position_x,phy_position_y);
         
         x = retVal[0];
-        y = retVal[1];
+        y = retVal[1];        
         
         var rot = scrCalcRotation(phy_position_x);
         

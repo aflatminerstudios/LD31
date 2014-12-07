@@ -34,6 +34,33 @@ facing = 1;
 
 lastAnimal = noone;
 collidedAgain = false;
+isOnCircle = false;
+child = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///turn off isOnCircle
+
+isOnCircle = false;
 </string>
           </argument>
         </arguments>
@@ -56,8 +83,93 @@ collidedAgain = false;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Tire bounce
+
+
+if (!isOnCircle) {
+    xPos = phy_position_x;
+    yPos = phy_position_y + sprite_height / 2;
+    
+    cX = objCircle.x;
+    cY = objCircle.y;
+    r = objCircle.radius;
+    
+    dist = power((xPos - cX),2) + power((yPos - cY),2);
+    
+    if (dist &gt;= power(r,2)) {
+        phy_position_x = phy_position_xprevious;
+        phy_position_y = phy_position_yprevious;
+ 
+        dX = cX - xPos;
+        dY = cY - yPos;
+        
+        dMag = sqrt(dX * dX + dY * dY);
+        
+        vX = phy_linear_velocity_x;
+        vY = phy_linear_velocity_y;
+          
+        vMag = sqrt(vX * vX + vY * vY);
+        
+        dNX = dX / dMag;
+        dNY = dY / dMag;
+        
+        phy_linear_velocity_x = vMag * dNX;
+        phy_linear_velocity_y = vMag * dNY;
+        
+        /*show_debug_message("dX = " + string(dX));
+        show_debug_message("dY = " + string(dY));
+        
+        
+        signX = sign(dX);
+        signY = sign(dY);
+        
+        if (phy_linear_velocity_x != 0) {
+            theta = arctan(dY / dX); 
+        } else {
+            theta = arctan(0);
+        }
+        
+        phy_linear_velocity_x = mag * sin(theta);
+        phy_linear_velocity_y = mag * cos(theta);   
+        
+        show_debug_message("signX = " + string(signX));
+        show_debug_message("signY = " + string(signY));
+        
+        phy_linear_velocity_x = -1 * signX * abs(phy_linear_velocity_x);
+        phy_linear_velocity_y = -1 * signY * abs(phy_linear_velocity_y);
+*/        
+
+        
+        /*phy_linear_velocity_x += sign(phy_linear_velocity_x) * 2;
+        phy_linear_velocity_y += sign(phy_linear_velocity_x) * 2;*/
+    }
+    
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>/// Special Positioning
-phy_position_x = scrLoopX(phy_position_x);
+
+if (isOnCircle) {
+    phy_position_x = scrLoopX(phy_position_x);
+}
 
 if phy_linear_velocity_y == 0
 {
@@ -137,19 +249,27 @@ if onGround
     airAcceleration = 0.5;
 }
 
-if keyboard_check_pressed(vk_left) || keyboard_check(vk_left)
-{
-    facing = -1;
-    physics_apply_force(phy_position_x, phy_position_y, -50 * airAcceleration, 0);
+if (isOnCircle) {
+    
+    if (keyboard_check(vk_left)) {
+        scrMoveTire(objCircleStart, -1);
+    } else if (keyboard_check(vk_right)) {
+        scrMoveTire(objCircleStart, 1);    
+    }
+} else {    
+    if keyboard_check_pressed(vk_left) || keyboard_check(vk_left)
+    {
+        facing = -1;
+        physics_apply_force(phy_position_x, phy_position_y, -50 * airAcceleration, 0);
+    }
+    
+    if keyboard_check_pressed(vk_right) || keyboard_check(vk_right)
+    {
+        facing = 1;
+        physics_apply_force(phy_position_x, phy_position_y, 50 * airAcceleration, 0);
+    }
+
 }
-
-if keyboard_check_pressed(vk_right) || keyboard_check(vk_right)
-{
-    facing = 1;
-    physics_apply_force(phy_position_x, phy_position_y, 50 * airAcceleration, 0);
-}
-
-
 </string>
           </argument>
         </arguments>
@@ -171,12 +291,31 @@ if keyboard_check_pressed(vk_right) || keyboard_check(vk_right)
           <argument>
             <kind>1</kind>
             <string>/// Vertical Movement
+
 if keyboard_check(vk_space) || keyboard_check(vk_up)
 {
+    if (isOnCircle) {
+
+        isOnCircle = false;
+       // alarm[0] = 3;
+        
+        if (child == noone) {
+            child = instance_create(phy_position_x, phy_position_y, objPlayerGhost);
+            child.parent = self.id;
+        }
+       
+        phy_position_x = objCircle.x;
+        phy_position_y = objCircle.y - sprite_height / 2 + objCircle.radius;
+       
+        
+        x = phy_position_x;
+        y = phy_position_y;
+    }
+    
     if airTime &lt; 15
     {
         airTime++;
-        physics_apply_local_force(0, 0, 0, -500);
+        physics_apply_local_force(0, 0, 0, -1000);
     }
 }
 </string>
@@ -203,6 +342,55 @@ if keyboard_check(vk_space) || keyboard_check(vk_up)
 if !collidedAgain &amp;&amp; lastAnimal != noone
 {
     lastAnimal = noone;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check for switching back to circle coordinates
+
+var footX1 = x - sprite_width / 2;
+var footX2 = x + sprite_width / 2;
+var footY = y + sprite_height / 2;
+
+var cX = objCircle.x;
+var cY = objCircle.y;
+
+var r = objCircle.radius;
+
+var bottomY = cY + r;
+
+if (!isOnCircle) {
+ if (!keyboard_check(vk_space) &amp;&amp; !keyboard_check(vk_up)) {
+    if ((footY &gt; (bottomY - 3)) &amp;&amp; (footY &lt; (bottomY + 3))) {
+        if ((footX1 &gt; (cX - 20)) &amp;&amp; (footX2 &lt; (cX + 20))) {
+            isOnCircle = true;            
+  //          show_debug_message("Don't fly!");            
+            if (child != noone) {
+                with (child) {
+                    instance_destroy();
+                }           
+                child = noone;
+            }
+        }
+    } 
+    }
 }
 </string>
           </argument>
@@ -261,7 +449,32 @@ if animal == noone
             <kind>1</kind>
             <string>///Draw the sprite
 
-scrDrawToCircle(self.id);
+
+if (isOnCircle) {
+
+    theta = (objCircleStart.theta + pi) % (2 * pi);
+
+    pct = theta / (2 * pi);
+    
+    bX = objFakeFloor.beginX;
+    eX = objFakeFloor.endX;
+    length = eX - bX;
+    
+    phy_position_x = bX + pct * length;
+
+    x = objCircle.x;
+    y = objCircle.y + objCircle.radius - sprite_height / 2;
+    
+//            var retVal = scrLineToCircle(phy_position_x,phy_position_y);
+//            show_debug_message(phy_position_x);
+    draw_self();
+    
+    scrDrawToCircle(self.id);
+    
+    draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_white, 1);
+} else {
+    draw_self();
+}   
 
 if facing == -1
 {

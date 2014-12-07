@@ -32,6 +32,8 @@ radius = 286;
 
 instance_create(x, y + radius, objCircleStart)
 instance_create(x, y, objTire);
+
+instance_create(x, y + radius, objBox2);
 </string>
           </argument>
         </arguments>

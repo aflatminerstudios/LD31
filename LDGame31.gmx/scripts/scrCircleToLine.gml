@@ -1,4 +1,4 @@
-///scrCircleToLine(theta)
+///scrCircleToLine(theta, distFromCirc)
 
 /*var xPos = argument0;
 var yPos = argument1;
@@ -7,7 +7,7 @@ var nX = argument3;
 var nY = argument4;
 var gravWidth = argument5;*/
 var theta = argument0;
-var gravWidth = argument1;
+var distFromCirc = argument1;
 
 var newX;
 var newY;
@@ -25,7 +25,7 @@ var eX = objFakeFloor.endX;
 var floorY = objFakeFloor.phy_position_y;
 
 var r = objCircle.radius;
-var rp = r - gravWidth;
+var rp = r - distFromCirc;
 
 var cX = objCircle.x;
 var cY = objCircle.y;
@@ -63,9 +63,6 @@ if (arcLength > 0) {
     newX = bX - arcLength
 }
 newY = floorY;
-
-show_debug_message("arcLength = " + string(arcLength));
-show_debug_message(newX);
 
 ///r1 - r2 = y
 //newY -= dist;

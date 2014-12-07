@@ -54,11 +54,6 @@ rotationSeconds = 10;
             <kind>1</kind>
             <string>var r = objCircle.radius;
 
-theta += 2 * pi / (room_speed * rotationSeconds);
-
-if (theta &gt; 360)
-    theta -= 360;
-
 cX = objCircle.x;
 cY = objCircle.y;
 

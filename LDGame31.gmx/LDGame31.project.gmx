@@ -22,12 +22,13 @@
       <script>scripts\scrLineToCircle.gml</script>
       <script>scripts\scrDrawToCircle.gml</script>
       <script>scripts\scrCircleToLine.gml</script>
+      <script>scripts\scrCalcTheta.gml</script>
     </scripts>
     <script>scripts\scrPlayerAttack.gml</script>
     <script>scripts\scrPickupObject.gml</script>
     <script>scripts\scrReleaseObject.gml</script>
     <script>scripts\scrThrowBird.gml</script>
-    <script>scripts\scrCalcTheta.gml</script>
+    <script>scripts\scrMoveTire.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objBox</object>
@@ -35,6 +36,7 @@
     <object>objects\objDynamicParent</object>
     <object>objects\objStaticParent</object>
     <object>objects\objFakeFloor</object>
+    <object>objects\objPlayerGhost</object>
     <object>objects\objPlayer</object>
     <objects name="Circle">
       <object>objects\objCircle</object>
@@ -55,7 +57,6 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
-    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

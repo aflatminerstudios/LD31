@@ -21,7 +21,7 @@ var currentY = objCircleStart.y;
 if (currentX != startX) {
 var at1 = arctan((currentY - startY) / (currentX - startX));
 } else {
- at1 = pi;
+ at1 = pi / 2;
 }
 var at2 = arctan(startY / startX);
 /*var firstFact = abs(at1 - at2) / (2 * pi);
