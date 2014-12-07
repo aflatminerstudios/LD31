@@ -16,6 +16,9 @@
       <sprite>sprites\sprDuckHeld</sprite>
       <sprite>sprites\sprDuckThrown</sprite>
     </sprites>
+    <sprites name="Spider">
+      <sprite>sprites\sprSpider</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -56,6 +59,11 @@
       <object>objects\objGoalDuck</object>
     </objects>
     <object>objects\objAnimalControl</object>
+    <objects name="Enemies">
+      <object>objects\objEnemy</object>
+      <object>objects\objEnemySpider</object>
+    </objects>
+    <object>objects\objEnemyControl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
