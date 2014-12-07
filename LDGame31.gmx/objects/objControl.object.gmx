@@ -52,7 +52,9 @@ drawToLine = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(10, 10, score);
+            <string>/// Display score and player health
+draw_text(10, 10, "score: " + string(score));
+draw_text(10, 30, "hp: " + string(objPlayer.hitPoints));
 </string>
           </argument>
         </arguments>

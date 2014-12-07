@@ -31,6 +31,7 @@ airTime = 0;
 animal = noone;
 item = noone; // default to screen door
 facing = 1;
+hitPoints = 5;
 
 lastAnimal = noone;
 collidedAgain = false;
