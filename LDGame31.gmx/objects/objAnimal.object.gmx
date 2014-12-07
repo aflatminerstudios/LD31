@@ -55,8 +55,8 @@ objectType = "animal";
             <string>/// Special Positioning
 if isHeld
 {
-    phy_position_x = currentHolder.phy_position_x;
-    phy_position_y = currentHolder.phy_position_y - 50;
+    phy_position_x = currentHolder.phy_position_x + (currentHolder.facing * 8);
+    phy_position_y = currentHolder.phy_position_y;
     phy_linear_velocity_x = 0;
     phy_linear_velocity_y = 0;
     phy_angular_velocity = 0;
