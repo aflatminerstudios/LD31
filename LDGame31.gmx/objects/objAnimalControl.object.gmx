@@ -42,9 +42,9 @@ fourGoalPosX[1] = distance / 2;
 fourGoalPosX[2] = distance * 3 / 4;
 fourGoalPosX[3] = distance;
 
-instance_create(threeGoalPosX[0], objFakeFloor.y - 64, objGoalDuck);
-instance_create(threeGoalPosX[1], objFakeFloor.y - 64, objGoalDuck);
-instance_create(threeGoalPosX[2], objFakeFloor.y - 64, objGoalDuck);
+instance_create(threeGoalPosX[0], objFakeFloor.y - 96, objGoalDuck);
+instance_create(threeGoalPosX[1], objFakeFloor.y - 96, objGoalDuck);
+instance_create(threeGoalPosX[2], objFakeFloor.y - 96, objGoalDuck);
 
 instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
 instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);

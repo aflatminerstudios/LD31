@@ -61,12 +61,9 @@ image_speed = 5 / room_speed;
           <argument>
             <kind>1</kind>
             <string>/// Special Positioning
-var holderOffset;
-holderOffset = 24;
-
 if isHeld
 {
-    phy_position_x = currentHolder.phy_position_x + (currentHolder.facing * (holderOffset + holdingOffset));
+    phy_position_x = currentHolder.phy_position_x + (currentHolder.facing * (currentHolder.heldSpriteOffset + holdingOffset));
     phy_position_y = currentHolder.phy_position_y;
     phy_linear_velocity_x = 0;
     phy_linear_velocity_y = 0;

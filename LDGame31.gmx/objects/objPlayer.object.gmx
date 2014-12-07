@@ -30,9 +30,10 @@ onGround = true;
 airTime = 0;
 animal = noone;
 item = noone; // default to screen door
-facing = 1;
+facing = scrRandomDirection();
 hitPoints = 5;
 
+heldSpriteOffset = 40;
 lastAnimal = noone;
 collidedAgain = false;
 
