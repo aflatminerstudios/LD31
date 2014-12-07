@@ -29,12 +29,18 @@
       <script>scripts\scrLineToCircle.gml</script>
       <script>scripts\scrDrawToCircle.gml</script>
       <script>scripts\scrCircleToLine.gml</script>
+      <script>scripts\scrRandomDirection.gml</script>
     </scripts>
-    <script>scripts\scrPlayerAttack.gml</script>
     <script>scripts\scrPickupObject.gml</script>
     <script>scripts\scrReleaseObject.gml</script>
     <script>scripts\scrCalcTheta.gml</script>
-    <script>scripts\scrThrowDuck.gml</script>
+    <scripts name="Animals">
+      <script>scripts\scrThrowDuck.gml</script>
+      <script>scripts\scrNearbyEnemyDirection.gml</script>
+    </scripts>
+    <scripts name="Player">
+      <script>scripts\scrPlayerAttack.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\objBox</object>
@@ -48,21 +54,21 @@
       <object>objects\objCircleStart</object>
       <object>objects\objTire</object>
     </objects>
-    <object>objects\objControl</object>
     <objects name="Animals">
-      <object>objects\objAnimalDuck</object>
       <object>objects\objAnimal</object>
       <object>objects\objOldSchoolAnimal</object>
+      <object>objects\objAnimalDuck</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\objEnemy</object>
+      <object>objects\objEnemySpider</object>
     </objects>
     <objects name="Goals">
       <object>objects\objGoal</object>
       <object>objects\objGoalDuck</object>
     </objects>
+    <object>objects\objControl</object>
     <object>objects\objAnimalControl</object>
-    <objects name="Enemies">
-      <object>objects\objEnemy</object>
-      <object>objects\objEnemySpider</object>
-    </objects>
     <object>objects\objEnemyControl</object>
   </objects>
   <rooms name="rooms">

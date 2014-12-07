@@ -81,10 +81,7 @@ else if distanceRight &gt; distanceLeft
 }
 else
 {
-    var facingArray;
-    facingArray[0] = -1;
-    facingArray[1] = 1;    
-    facing = facingArray[irandom(1)];
+    facing = scrRandomDirection();
     phy_linear_velocity_x = facing * 100;
 }    
 

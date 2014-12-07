@@ -79,10 +79,13 @@ phy_position_x = scrLoopX(phy_position_x);
           <argument>
             <kind>1</kind>
             <string>/// Attack the animals
-score -= 10;
 with (other)
 {
-    instance_destroy();
+    if !isHeld
+    {
+        score -= 10;
+        instance_destroy();
+    }
 }
 </string>
           </argument>
@@ -107,7 +110,6 @@ with (other)
           <argument>
             <kind>1</kind>
             <string>/// Attack the hero
-show_debug_message("Attack the hero!");
 with (other)
 {
     hitPoints -= 1;

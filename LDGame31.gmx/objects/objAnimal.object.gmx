@@ -127,6 +127,7 @@ if isHeld
             <string>/// Reset Idle Animation
 if !isHeld
 {
+    pauseAI = false;
     sprite_index = spriteIdle;
 }
 </string>

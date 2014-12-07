@@ -30,7 +30,10 @@ isHeld = false;
 currentHolder = noone;
 objectType = "animal";
 holdingOffset = 6;
-facing = 1;
+facing = scrRandomDirection();
+
+pauseAI = false;
+alarm[1] = (2 + irandom(3)) * room_speed;
 
 spriteIdle = sprDuckIdle;
 spriteHeld = sprDuckHeld;
@@ -39,6 +42,161 @@ spriteThrown = sprDuckThrown;
 throw = scrThrowDuck;
 
 image_speed = 5 / room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Walk timer has expired
+pauseAI = true;
+alarm[0] = (2 + irandom(1)) * room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Pause timer has expired
+pauseAI = false;
+/// Set walk timer
+facing = scrRandomDirection();
+alarm[1] = (2 + irandom(3)) * room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Special Positioning
+var holderOffset;
+holderOffset = 24;
+
+if isHeld
+{
+    phy_position_x = currentHolder.phy_position_x + (currentHolder.facing * (holderOffset + holdingOffset));
+    phy_position_y = currentHolder.phy_position_y;
+    phy_linear_velocity_x = 0;
+    phy_linear_velocity_y = 0;
+    phy_angular_velocity = 0;
+    phy_speed_x = 0;
+    phy_speed_y = 0;
+} else {
+    phy_position_x = scrLoopX(phy_position_x);
+}
+    
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Facing
+if isHeld
+{
+    facing = currentHolder.facing;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// AI
+if !isHeld
+{
+    var nearbyEnemy;
+    nearbyEnemy = scrNearbyEnemyDirection(self.id, 200);
+    if nearbyEnemy != 0
+    {
+        /// Face away from the enemy.
+        facing = nearbyEnemy * -1;
+        /// Fly away.
+        phy_linear_velocity_x = facing * 1000;
+        phy_linear_velocity_y = -20;
+        sprite_index = spriteThrown;
+    }
+    if !pauseAI
+    {
+        phy_linear_velocity_x = facing * 50;
+    }
+}
 </string>
           </argument>
         </arguments>
