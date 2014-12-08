@@ -29,14 +29,13 @@
 
 globalvar drawToLine;
 globalvar distance;
+globalvar player1;
+globalvar player2;
 globalvar cumulativeScore;
 
 drawToLine = false;
 
 distance = objFakeFloor.endX - objFakeFloor.beginX;
-
-player1 = noone;
-player2 = noone;
 
 enemySpawnTimeMax = 10;
 enemyCountMax = 3;
@@ -45,6 +44,8 @@ animalSpawnTimeMax = 5;
 animalCountMax = 5;
 animalCount = 0;
 
+player1 = noone;
+player2 = noone;
 player1Score = 0;
 player2Score = 0;
 player1HighScore = 0;
