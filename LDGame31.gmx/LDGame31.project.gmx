@@ -43,6 +43,7 @@
       <script>scripts\scrCalcRotation.gml</script>
       <script>scripts\scrLineToCircle.gml</script>
       <script>scripts\scrDrawToCircle.gml</script>
+      <script>scripts\scrNull.gml</script>
       <script>scripts\scrCircleToLine.gml</script>
       <script>scripts\scrRandomDirection.gml</script>
     </scripts>
@@ -57,6 +58,10 @@
     </scripts>
     <scripts name="Player">
       <script>scripts\scrPlayerAttack.gml</script>
+    </scripts>
+    <scripts name="Items">
+      <script>scripts\scrUseScreen.gml</script>
+      <script>scripts\scrUseItem.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -85,6 +90,10 @@
       <object>objects\objGoal</object>
       <object>objects\objGoalDuck</object>
       <object>objects\objGoalGoatBrown</object>
+    </objects>
+    <objects name="Items">
+      <object>objects\objScreen</object>
+      <object>objects\objItem</object>
     </objects>
     <object>objects\objControl</object>
     <objects name="Players">

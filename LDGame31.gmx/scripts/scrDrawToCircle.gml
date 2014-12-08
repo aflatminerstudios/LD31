@@ -9,11 +9,11 @@ with (obj) {
     } else {        
         var retVal = scrLineToCircle(phy_position_x,phy_position_y);
         
-        x = retVal[0];
-        y = retVal[1];
+        var tempX = retVal[0];
+        var tempY = retVal[1];
         
         var rot = scrCalcRotation(phy_position_x);
         
-        draw_sprite_ext(sprite_index, image_index, x, y, facing, 1, rot, c_white, 1);
+        draw_sprite_ext(sprite_index, image_index, tempX, tempY, facing, 1, rot, c_white, 1);
     }
 }

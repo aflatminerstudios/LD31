@@ -29,7 +29,7 @@
 onGround = true;
 airTime = 0;
 animal = noone;
-item = noone; // default to screen door
+item = instance_create(x,y,objScreen);  // default to screen door
 facing = scrRandomDirection();
 
 points = 0;
@@ -112,7 +112,7 @@ if keyboard_check_pressed(ord('W')) || keyboard_check_pressed(ord('W'))
         scrReleaseObject(self, animal);
     } else {
         /// use item
-        scrPlayerAttack();
+        scrUseItem(self, item);
     }
 }
 </string>
@@ -277,6 +277,19 @@ if animal == noone
             <string>///Draw the sprite
 image_xscale = facing;
 scrDrawToCircle(self.id);
+
+/*
+if (item != noone) {
+
+        var x1 = phy_position_x;
+    var y1 = phy_position_y - item.screenWidth / 2;
+    var x2 = x1 + item.screenWidth * facing;
+    var y2 = y1 + item.screenWidth;
+        draw_set_color(c_black);
+    draw_rectangle(x1,y1,x2,y2,false);
+    }
+    
+    */
 </string>
           </argument>
         </arguments>
