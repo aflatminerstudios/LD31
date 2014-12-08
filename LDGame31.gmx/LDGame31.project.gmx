@@ -19,8 +19,8 @@
       <sprites name="Brown">
         <sprite>sprites\sprGoatBrownIdle0</sprite>
         <sprite>sprites\sprGoatBrownIdle1</sprite>
-        <sprite>sprites\sprGoatBrownHeld</sprite>
         <sprite>sprites\sprGoatBrownWalk</sprite>
+        <sprite>sprites\sprGoatBrownHeld</sprite>
       </sprites>
     </sprites>
     <sprites name="PlayerFemale">
