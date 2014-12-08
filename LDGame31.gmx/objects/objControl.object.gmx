@@ -29,8 +29,11 @@
 
 globalvar drawToLine;
 globalvar distance;
+globalvar cumulativeScore;
 
-enemySpawnTimeMax = 5;
+cumulativeScore = 0;
+
+enemySpawnTimeMax = 10;
 animalSpawnTimeMax = 5;
 enemyCountMax = 3;
 animalCountMax = 5;
@@ -157,6 +160,8 @@ if player1 != noone || player2 != noone
             <string>/// Start the game
 scrSetupGoatGoals();
 
+cumulativeScore = 0;
+
 /// Spawn default animals (1 of each type)
 instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
 instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
@@ -261,6 +266,27 @@ if (player1 != noone)
 if (player2 != noone)
 {
     player2Score = player2.points;
+}
+
+
+if cumulativeScore &gt;= 1000
+{
+
+}
+else if cumulativeScore &gt;= 1000
+{
+    enemySpawnTimeMax = 10;
+    animalSpawnTimeMax = 5;
+    enemyCountMax = 4;
+    animalCountMax = 5;
+}
+else 
+{
+enemySpawnTimeMax = 10;
+animalSpawnTimeMax = 5;
+enemyCountMax = 3;
+animalCountMax = 5;
+
 }
 </string>
           </argument>
