@@ -81,6 +81,7 @@
     <objects name="Goals">
       <object>objects\objGoal</object>
       <object>objects\objGoalDuck</object>
+      <object>objects\objGoalGoatBrown</object>
     </objects>
     <object>objects\objControl</object>
     <object>objects\objAnimalControl</object>
