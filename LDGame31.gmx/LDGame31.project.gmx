@@ -44,6 +44,8 @@
     <scripts name="Animals">
       <script>scripts\scrThrowDuck.gml</script>
       <script>scripts\scrNearbyEnemyDirection.gml</script>
+      <script>scripts\scrSetupGoatGoals.gml</script>
+      <script>scripts\scrCleanUpGame.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scrPlayerAttack.gml</script>

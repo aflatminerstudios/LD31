@@ -36,11 +36,76 @@ distance = objFakeFloor.endX - objFakeFloor.beginX;
 
 player1 = noone;
 player2 = noone;
-animalController = noone;
-enemyController = noone;
+
+globalvar goal1, goal2, goal3, goal4;
+goal1 = noone;
+goal2 = noone;
+goal3 = noone;
+goal4 = noone;
+
+animalCount = 0;
+enemyCount = 0;
 
 player1Score = 0;
 player2Score = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Enemy Spawn Timer
+if (enemyCount &lt; 5)
+{
+    instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
+    enemyCount += 1;
+}
+alarm[2] = irandom(10) * room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Animal Spawn Timer
+if (animalCount &lt; 5)
+{
+    instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
+    animalCount += 1;
+}
+alarm[1] = irandom(10) * room_speed;
 </string>
           </argument>
         </arguments>
@@ -64,8 +129,19 @@ player2Score = 0;
           <argument>
             <kind>1</kind>
             <string>/// Start the game
-animalController = instance_create(0, 0, objAnimalControl);
-enemyController = instance_create(0, 0, objEnemyControl);
+scrSetupGoatGoals();
+
+/// Spawn default animals (1 of each type)
+instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
+instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
+animalCount = 2;
+
+instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
+enemyCount = 1;
+
+/// Set spawn timers
+alarm[1] = irandom(10) * room_speed;
+alarm[2] = irandom(10) * room_speed;
 </string>
           </argument>
         </arguments>
@@ -96,8 +172,7 @@ if player1 != noone
     {
         if player2 == noone
         {
-            // Clear game
-
+            scrCleanUpGame();
         }
         with (player1)
         {
@@ -113,7 +188,7 @@ if player2 != noone
     {
         if player1 == noone
         {
-            // Clear game
+            scrCleanUpGame();
         }
         player2 = noone;
     }
@@ -153,6 +228,49 @@ if (player2 != noone)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Enemy Control
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Animal Control
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="5" enumb="87">
       <action>
@@ -174,10 +292,10 @@ if (player2 != noone)
             <string>/// Load player 1 into game
 if player1 == noone
 {
-    player1 = instance_create(irandom(distance), 0, objPlayerFemale);
+    player1 = instance_create(irandom(distance), objFakeFloor.y, objPlayerFemale);
     if player2 == noone
     {
-        alarm[0] = 10 * room_speed;
+        alarm[0] = 5 * room_speed;
     }
 }
 </string>
@@ -205,10 +323,10 @@ if player1 == noone
             <string>/// Load player 2 into the game
 if player2 == noone
 {
-    player2 = instance_create(irandom(distance), 0, objPlayerMale);
+    player2 = instance_create(irandom(distance), objFakeFloor.y, objPlayerMale);
     if player1 == noone
     {
-        alarm[0] = 10 * room_speed;
+        alarm[0] = 5 * room_speed;
     }
 }
 </string>

@@ -107,6 +107,7 @@ if keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_up)
     {
         /// throw animal
         lastAnimal = animal;
+        animal.thrownBy = self.id;    
         script_execute(animal.throw, animal);
         scrReleaseObject(self, animal);
     } else {

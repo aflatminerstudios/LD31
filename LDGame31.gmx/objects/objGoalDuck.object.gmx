@@ -55,9 +55,9 @@ with (other)
 {
     if isHeld == false
     {
+        thrownBy.points += 100;
         instance_destroy();
-        score += 10;
-        objAnimalControl.animalCount -= 1;
+        objControl.animalCount -= 1;
     }
 }
 

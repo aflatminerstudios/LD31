@@ -28,6 +28,7 @@
             <string>/// Initialization
 isHeld = false;
 currentHolder = noone;
+thrownBy = noone;
 objectType = "animal";
 holdingOffset = 6;
 facing = scrRandomDirection();

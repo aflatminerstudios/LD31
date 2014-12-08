@@ -30,9 +30,6 @@
 enemyCount = 0;
 spawnTimer = 0;
 
-var distance;
-distance = objFakeFloor.endX - objFakeFloor.beginX;
-
 instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
 enemyCount += 1;
 </string>

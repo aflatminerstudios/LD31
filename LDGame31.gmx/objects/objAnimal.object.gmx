@@ -29,6 +29,7 @@
 
 isHeld = false;
 currentHolder = noone;
+thrownBy = noone;
 objectType = "animal";
 holdingOffset = 0;
 facing = 1;
@@ -125,6 +126,7 @@ if isHeld
 if !isHeld
 {
     pauseAI = false;
+    thrownBy = noone;
     sprite_index = spriteIdle;
 }
 </string>
