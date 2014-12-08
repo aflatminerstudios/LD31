@@ -84,7 +84,6 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
-    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
