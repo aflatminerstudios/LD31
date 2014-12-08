@@ -33,7 +33,7 @@ phy_position_x = scrLoopX(phy_position_x);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objAnimalGoatBrown">
+    <event eventtype="4" ename="objAnimalGoat">
       <action>
         <libid>1</libid>
         <id>603</id>

@@ -33,6 +33,7 @@ thrownBy = noone;
 objectType = "animal";
 holdingOffset = 8;
 facing = scrRandomDirection();
+pointValue = 100;
 
 pauseAI = false;
 alarm[1] = (2 + irandom(3) * room_speed);
