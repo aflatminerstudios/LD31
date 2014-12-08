@@ -134,6 +134,7 @@ if isHeld
     phy_angular_velocity = 0;
     phy_speed_x = 0;
     phy_speed_y = 0;
+    sprite_index = spriteHeld;
 } else {
     phy_position_x = scrLoopX(phy_position_x);
 }
@@ -184,7 +185,7 @@ if isHeld
           <argument>
             <kind>1</kind>
             <string>/// AI
-if !isHeld
+if !isHeld &amp;&amp; thrownBy == noone
 {
     var nearbyEnemy;
     nearbyEnemy = scrNearbyEnemyDirection(self.id, 100);

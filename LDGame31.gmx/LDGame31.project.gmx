@@ -66,6 +66,7 @@
       <script>scripts\scrUseScreen.gml</script>
       <script>scripts\scrUseItem.gml</script>
     </scripts>
+    <script>scripts\scrAddMiniPointsIndicator.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objBox</object>
@@ -104,6 +105,7 @@
       <object>objects\objPlayerMale</object>
       <object>objects\objPlayerFemale</object>
     </objects>
+    <object>objects\objMiniPointsIndicator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>

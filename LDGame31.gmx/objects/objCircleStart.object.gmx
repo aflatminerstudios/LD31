@@ -29,7 +29,7 @@
 startY = y;
 
 theta = 0;
-rotationSeconds = 20;
+rotationSeconds = 30;
 </string>
           </argument>
         </arguments>

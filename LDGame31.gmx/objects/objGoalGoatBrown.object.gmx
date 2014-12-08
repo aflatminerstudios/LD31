@@ -56,6 +56,9 @@ with (other)
     if isHeld == false &amp;&amp; thrownBy != noone
     {
         thrownBy.points += 100;
+        var location;
+        location = scrLineToCircle(x, y)
+        scrAddMiniPointsIndicator(location[0], location[1], string(100));
         instance_destroy();
         objControl.animalCount -= 1;
     }
