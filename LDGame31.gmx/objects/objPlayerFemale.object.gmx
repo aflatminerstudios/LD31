@@ -152,7 +152,7 @@ if keyboard_check_pressed(ord('A')) || keyboard_check(ord('A'))
 {
     facing = -1;
     sprite_index = spriteRun;
-    phy_linear_velocity_x = facing * 100;
+    phy_linear_velocity_x = facing * 175;
 }
 else if keyboard_check_pressed(ord('D')) || keyboard_check(ord('D'))
 {
@@ -192,7 +192,7 @@ if keyboard_check(ord('W')) || keyboard_check(ord('W'))
     if airTime &lt; 15
     {
         airTime++;
-        phy_linear_velocity_y = -100;
+        phy_linear_velocity_y = -200;
     }
 }
 </string>
