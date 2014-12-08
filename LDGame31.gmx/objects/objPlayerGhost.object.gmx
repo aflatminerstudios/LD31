@@ -62,16 +62,22 @@ var pY = parent.phy_position_y;
 var mX = pX - cX;
 var mY = (pY - cX);
 
-var theta = arctan(mY / mX);
+var theta = -1 * (arctan(mY / mX) + objCircleStart.theta);
 
-if (cX &lt; pX){ 
+if (cX &gt; pX) {
+    if (cY &gt; pY) {
+     //   theta *= -1;
+    }
+}
+
+/*if (cX &lt; pX){ 
     theta += pi;
     if (cY &lt; pY) {
         theta =  -theta;
     } else {
         theta = -theta;
     }
-}
+}*/
 
 
 xPos = theta * r;
