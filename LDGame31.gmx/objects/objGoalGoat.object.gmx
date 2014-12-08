@@ -59,7 +59,6 @@ with (other)
         cumulativeScore += pointValue;
         var location;
         location = scrLineToCircle(x, y)
-        show_debug_message(thrownBy.color);
         scrAddMiniPointsIndicator(location[0], location[1], string(pointValue), thrownBy.color);
         instance_destroy();
         objControl.animalCount -= 1;
