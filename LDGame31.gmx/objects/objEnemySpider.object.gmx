@@ -100,17 +100,17 @@ if (!stunned) {
     if distanceLeft &gt; distanceRight
     {
         facing = 1;
-        phy_linear_velocity_x = 100;
+        phy_linear_velocity_x = 30;
     }
     else if distanceRight &gt; distanceLeft
     {
         facing = -1;
-        phy_linear_velocity_x = -100;
+        phy_linear_velocity_x = -30;
     }
     else
     {
         facing = scrRandomDirection();
-        phy_linear_velocity_x = facing * 100;
+        phy_linear_velocity_x = facing * 30;
     }    
 
 }

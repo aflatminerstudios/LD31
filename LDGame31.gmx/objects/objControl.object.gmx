@@ -32,7 +32,7 @@ globalvar distance;
 
 enemySpawnTimeMax = 5;
 animalSpawnTimeMax = 5;
-enemyCountMax = 5;
+enemyCountMax = 3;
 animalCountMax = 5;
 
 randomize();
