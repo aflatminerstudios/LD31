@@ -66,6 +66,7 @@
       <script>scripts\scrNull.gml</script>
       <script>scripts\scrCircleToLine.gml</script>
       <script>scripts\scrRandomDirection.gml</script>
+      <script>scripts\scrFindEmptySpawnPoint.gml</script>
     </scripts>
     <script>scripts\scrPickupObject.gml</script>
     <script>scripts\scrReleaseObject.gml</script>

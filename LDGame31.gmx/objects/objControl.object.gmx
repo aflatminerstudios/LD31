@@ -102,7 +102,7 @@ if player1 != noone || player2 != noone
 {
     if (enemyCount &lt; enemyCountMax)
     {
-        instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
+        instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objEnemySpider);
         enemyCount += 1;
     }
     alarm[2] = (irandom_range(1, enemySpawnTimeMax)) * room_speed;
@@ -140,10 +140,10 @@ if player1 != noone || player2 != noone
         switch (goatType)
         {
             case 0:
-                instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
+                instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
                 break;
             default:
-                instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
+                instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
                 break;
         }
         animalCount += 1;
@@ -178,11 +178,11 @@ scrSetupGoatGoals();
 cumulativeScore = 0;
 
 /// Spawn default animals (1 of each type)
-instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
-instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
+instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
 animalCount = 2;
 
-instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
+instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objEnemySpider);
 enemyCount = 1;
 
 /// Set spawn timers
