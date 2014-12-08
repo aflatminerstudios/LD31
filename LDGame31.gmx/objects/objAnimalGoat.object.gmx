@@ -192,7 +192,7 @@ if !isHeld
     {
         facing = nearbyEnemy * -1;
         phy_linear_velocity_x = facing * 500;
-        phy_linear_velocity_y = -10;
+        phy_linear_velocity_y = 0;
         sprite_index = spriteThrown;
     }
     

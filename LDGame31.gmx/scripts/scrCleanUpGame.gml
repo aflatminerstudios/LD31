@@ -1,7 +1,7 @@
 /// scrCleanUpGame
 
 /// Clean up goals
-with (objGoal)
+with (objGoalGoatBrown)
 {
     instance_destroy();
 }
