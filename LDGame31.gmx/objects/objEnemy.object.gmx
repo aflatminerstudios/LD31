@@ -144,7 +144,7 @@ with (other)
             {
                 cumulativeScore = 0;
             }
-            if player2.points &gt;= (pointvalue /4)
+            if player2.points &gt;= (pointValue / 4)
             {
                 player2.points -= (pointValue / 4);
             }

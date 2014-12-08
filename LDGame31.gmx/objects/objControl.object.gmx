@@ -329,7 +329,7 @@ animalCountMax = 5;
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="87">
+    <event eventtype="5" enumb="83">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -360,7 +360,69 @@ if player1 == noone
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="38">
+    <event eventtype="5" enumb="40">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Load player 2 into the game
+if player2 == noone
+{
+    player2 = instance_create(irandom(distance), objFakeFloor.y, objPlayerMale);
+    if player1 == noone
+    {
+        alarm[0] = 5 * room_speed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Load player 1 into game
+if player1 == noone
+{
+    player1 = instance_create(irandom(distance), objFakeFloor.y, objPlayerFemale);
+    if player2 == noone
+    {
+        alarm[0] = 5 * room_speed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="17">
       <action>
         <libid>1</libid>
         <id>603</id>
