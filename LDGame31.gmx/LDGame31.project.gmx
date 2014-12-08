@@ -15,6 +15,11 @@
       <sprite>sprites\sprDuckHeld</sprite>
       <sprite>sprites\sprDuckThrown</sprite>
     </sprites>
+    <sprites name="Goat">
+      <sprites name="Brown">
+        <sprite>sprites\sprGoatBrownIdle0</sprite>
+      </sprites>
+    </sprites>
     <sprites name="PlayerFemale">
       <sprite>sprites\sprPlayerFemaleIdle</sprite>
       <sprite>sprites\sprPlayerFemaleRun</sprite>
