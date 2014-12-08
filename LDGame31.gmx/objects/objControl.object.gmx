@@ -31,15 +31,6 @@ globalvar drawToLine;
 globalvar distance;
 globalvar cumulativeScore;
 
-cumulativeScore = 0;
-
-enemySpawnTimeMax = 10;
-animalSpawnTimeMax = 5;
-enemyCountMax = 3;
-animalCountMax = 5;
-
-randomize();
-
 drawToLine = false;
 
 distance = objFakeFloor.endX - objFakeFloor.beginX;
@@ -47,19 +38,20 @@ distance = objFakeFloor.endX - objFakeFloor.beginX;
 player1 = noone;
 player2 = noone;
 
-globalvar goal1, goal2, goal3, goal4;
-goal1 = noone;
-goal2 = noone;
-goal3 = noone;
-goal4 = noone;
-
-animalCount = 0;
+enemySpawnTimeMax = 10;
+enemyCountMax = 3;
 enemyCount = 0;
+animalSpawnTimeMax = 5;
+animalCountMax = 5;
+animalCount = 0;
 
 player1Score = 0;
 player2Score = 0;
 player1HighScore = 0;
 player2HighScore = 0;
+cumulativeScore = 0;
+
+randomize();
 </string>
           </argument>
         </arguments>
