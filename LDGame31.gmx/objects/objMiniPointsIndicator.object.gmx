@@ -60,7 +60,7 @@ alarm[0] = timeToLive;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -81,7 +81,8 @@ alarm[0] = timeToLive;
 
 var verticalPosition;
 verticalPosition = y - verticalDistance * ((timeToLive - alarm[0])/timeToLive);
-  
+
+draw_set_font(fntPoints);
 draw_text_transformed_colour(x+1,verticalPosition+1,text,1,1,0,c_dkgray,c_dkgray,c_dkgray,c_dkgray,.6);
 draw_text_transformed_colour(x,verticalPosition,text,1,1,0,color,color,color,color,1);
 

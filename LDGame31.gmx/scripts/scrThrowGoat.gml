@@ -2,6 +2,6 @@
 with (animal) {
     pauseAI = true;
     phy_linear_velocity_x = currentHolder.facing * 200;
-    phy_linear_velocity_y = -200;
+    phy_linear_velocity_y = -250;
     sprite_index = spriteThrown;
 }

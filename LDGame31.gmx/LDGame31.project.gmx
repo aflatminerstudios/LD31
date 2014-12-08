@@ -86,6 +86,10 @@
     </scripts>
     <script>scripts\scrAddMiniPointsIndicator.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fntStatus</font>
+    <font>fonts\fntPoints</font>
+  </fonts>
   <objects name="objects">
     <object>objects\objBox</object>
     <object>objects\objBox2</object>
@@ -97,6 +101,7 @@
       <object>objects\objCircle</object>
       <object>objects\objCircleStart</object>
       <object>objects\objTire</object>
+      <object>objects\objTireForeground</object>
     </objects>
     <objects name="Animals">
       <object>objects\objAnimal</object>

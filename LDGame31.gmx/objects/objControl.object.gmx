@@ -479,7 +479,7 @@ if player2 == noone
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -498,6 +498,7 @@ if player2 == noone
             <kind>1</kind>
             <string>/// Display score and player health
 draw_set_halign(fa_left);
+draw_set_font(fntStatus);
 draw_text(10, 10, "Player 1");
 if (player1 != noone)
 {
@@ -505,7 +506,7 @@ if (player1 != noone)
     draw_text(10, 50, "Hp: " + string(player1.hitPoints));
 } else {
     draw_text(10, 30, "High Score: " + string(player1HighScore));
-    draw_text(10, 50, "Press action to join");
+    draw_text(10, 50, "Press Action To Join!");
 }
 
 draw_set_halign(fa_right);
@@ -516,7 +517,7 @@ if (player2 != noone)
     draw_text(room_width - 10, 50, "Hp: " + string(player2.hitPoints));
 } else {
     draw_text(room_width - 10, 30, "High Score: " + string(player2HighScore));
-    draw_text(room_width - 10, 50, "Press action to join");
+    draw_text(room_width - 10, 50, "Press action to join!");
 }
 draw_set_halign(fa_left);
 </string>
