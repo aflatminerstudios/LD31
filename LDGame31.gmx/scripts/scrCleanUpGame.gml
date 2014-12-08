@@ -11,7 +11,7 @@ goal3 = noone;
 goal4 = noone;
 
 /// Clean up animals
-with (objAnimalDuck)
+with (objAnimalGoatBrown)
 {
     instance_destroy();
 }

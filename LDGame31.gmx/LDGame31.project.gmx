@@ -72,6 +72,8 @@
     </objects>
     <objects name="Animals">
       <object>objects\objAnimal</object>
+      <object>objects\objAnimalGoat</object>
+      <object>objects\objAnimalGoatBrown</object>
       <object>objects\objOldSchoolAnimal</object>
       <object>objects\objAnimalDuck</object>
     </objects>
