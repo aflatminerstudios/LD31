@@ -55,6 +55,8 @@ enemyCount = 0;
 
 player1Score = 0;
 player2Score = 0;
+player1HighScore = 0;
+player2HighScore = 0;
 </string>
           </argument>
         </arguments>
@@ -198,6 +200,10 @@ if player1 != noone
         {
             scrCleanUpGame();
         }
+        if player1.points &gt; player1HighScore
+        {
+            player1HighScore = player1.points;
+        }
         with (player1)
         {
             instance_destroy();
@@ -213,6 +219,10 @@ if player2 != noone
         if player1 == noone
         {
             scrCleanUpGame();
+        }
+        if player2.points &gt; player2HighScore
+        {
+            player2HighScore = player2.points;
         }
         with (player2)
         {
@@ -386,6 +396,7 @@ if (player1 != noone)
     draw_text(10, 30, "Score: " + string(player1Score));
     draw_text(10, 50, "Hp: " + string(player1.hitPoints));
 } else {
+    draw_text(10, 30, "High Score: " + string(player1HighScore));
     draw_text(10, 50, "Press action to join");
 }
 
@@ -395,6 +406,7 @@ if (player2 != noone)
     draw_text(920, 30, "Score: " + string(player2Score));
     draw_text(920, 50, "Hp: " + string(player2.hitPoints));
 } else {
+    draw_text(920, 30, "High Score: " + string(player2HighScore));
     draw_text(920, 50, "Press action to join");
 }
 </string>
