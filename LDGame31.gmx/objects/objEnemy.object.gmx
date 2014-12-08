@@ -157,6 +157,7 @@ with (other)
         var location;
         location = scrLineToCircle(x, y)
         scrAddMiniPointsIndicator(location[0], location[1], "-" + string(pointValue / 4), c_black);
+        objControl.animalCount -=1;
         instance_destroy();
     }
 }
