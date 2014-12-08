@@ -70,7 +70,7 @@ image_speed = 5 / room_speed;
             <kind>1</kind>
             <string>/// Walk timer has expired
 pauseAI = true;
-
+sprite_index = spriteIdle[irandom(1)];
 /// Set pause timer
 alarm[0] = (2 + irandom(1)) * room_speed;
 </string>
