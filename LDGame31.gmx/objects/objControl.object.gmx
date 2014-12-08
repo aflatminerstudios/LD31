@@ -30,6 +30,8 @@
 globalvar drawToLine;
 globalvar distance;
 
+randomize();
+
 drawToLine = false;
 
 distance = objFakeFloor.endX - objFakeFloor.beginX;
