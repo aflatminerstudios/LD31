@@ -1,14 +1,10 @@
 /// scrCleanUpGame
 
 /// Clean up goals
-with (objGoalGoatBrown)
+with (objGoalGoat)
 {
     instance_destroy();
 }
-goal1 = noone;
-goal2 = noone;
-goal3 = noone;
-goal4 = noone;
 
 /// Clean up animals
 with (objAnimalGoatBrown)

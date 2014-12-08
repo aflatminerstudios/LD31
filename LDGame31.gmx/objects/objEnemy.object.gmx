@@ -113,6 +113,50 @@ with (other)
 {
     if !isHeld
     {
+        if player1 != noone
+        {
+            if cumulativeScore &gt;= (pointValue / 4)
+            {
+                cumulativeScore -= (pointValue / 4);
+            }
+            else
+            {
+                cumulativeScore = 0;                
+            }
+            
+            if player1.points &gt;= (pointValue / 4)
+            {
+                player1.points -= (pointValue / 4);
+            }
+            else 
+            {
+                player1.points = 0;
+            }
+        }
+        
+        if player2 != noone
+        {
+            if cumulativeScore &gt;= (pointValue / 4)
+            {
+                cumulativeScore -= (pointValue / 4);
+            }
+            else
+            {
+                cumulativeScore = 0;
+            }
+            if player2.points &gt;= (pointValue / 4)
+            {
+                player2.points -= (pointValue / 4);
+            }
+            else
+            {
+                player2.points = 0;
+            }
+        }
+
+        var location;
+        location = scrLineToCircle(x, y)
+        scrAddMiniPointsIndicator(location[0], location[1], "-" + string(pointValue / 4), c_black);
         instance_destroy();
     }
 }

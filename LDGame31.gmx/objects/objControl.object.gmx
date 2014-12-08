@@ -29,34 +29,30 @@
 
 globalvar drawToLine;
 globalvar distance;
-
-enemySpawnTimeMax = 5;
-animalSpawnTimeMax = 5;
-enemyCountMax = 3;
-animalCountMax = 5;
-
-randomize();
+globalvar player1;
+globalvar player2;
+globalvar cumulativeScore;
 
 drawToLine = false;
 
 distance = objFakeFloor.endX - objFakeFloor.beginX;
 
+enemySpawnTimeMax = 10;
+enemyCountMax = 3;
+enemyCount = 0;
+animalSpawnTimeMax = 5;
+animalCountMax = 5;
+animalCount = 0;
+
 player1 = noone;
 player2 = noone;
-
-globalvar goal1, goal2, goal3, goal4;
-goal1 = noone;
-goal2 = noone;
-goal3 = noone;
-goal4 = noone;
-
-animalCount = 0;
-enemyCount = 0;
-
 player1Score = 0;
 player2Score = 0;
 player1HighScore = 0;
 player2HighScore = 0;
+cumulativeScore = 0;
+
+randomize();
 </string>
           </argument>
         </arguments>
@@ -179,6 +175,8 @@ if player1 != noone || player2 != noone
             <string>/// Start the game
 scrSetupGoatGoals();
 
+cumulativeScore = 0;
+
 /// Spawn default animals (1 of each type)
 instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
 instance_create(irandom(distance), objFakeFloor.y, objAnimalGoatBrown);
@@ -284,6 +282,27 @@ if (player2 != noone)
 {
     player2Score = player2.points;
 }
+
+
+if cumulativeScore &gt;= 1000
+{
+
+}
+else if cumulativeScore &gt;= 1000
+{
+    enemySpawnTimeMax = 10;
+    animalSpawnTimeMax = 5;
+    enemyCountMax = 4;
+    animalCountMax = 5;
+}
+else 
+{
+enemySpawnTimeMax = 10;
+animalSpawnTimeMax = 5;
+enemyCountMax = 3;
+animalCountMax = 5;
+
+}
 </string>
           </argument>
         </arguments>
@@ -332,7 +351,7 @@ if (player2 != noone)
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="87">
+    <event eventtype="5" enumb="83">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -363,7 +382,69 @@ if player1 == noone
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="38">
+    <event eventtype="5" enumb="40">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Load player 2 into the game
+if player2 == noone
+{
+    player2 = instance_create(irandom(distance), objFakeFloor.y, objPlayerMale);
+    if player1 == noone
+    {
+        alarm[0] = 5 * room_speed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Load player 1 into game
+if player1 == noone
+{
+    player1 = instance_create(irandom(distance), objFakeFloor.y, objPlayerFemale);
+    if player2 == noone
+    {
+        alarm[0] = 5 * room_speed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="17">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -412,6 +493,7 @@ if player2 == noone
           <argument>
             <kind>1</kind>
             <string>/// Display score and player health
+draw_set_halign(fa_left);
 draw_text(10, 10, "Player 1");
 if (player1 != noone)
 {
@@ -422,15 +504,17 @@ if (player1 != noone)
     draw_text(10, 50, "Press action to join");
 }
 
-draw_text(920, 10, "Player 2");
+draw_set_halign(fa_right);
+draw_text(room_width - 10, 10, "Player 2");
 if (player2 != noone)
 {
-    draw_text(920, 30, "Score: " + string(player2Score));
-    draw_text(920, 50, "Hp: " + string(player2.hitPoints));
+    draw_text(room_width - 10, 30, "Score: " + string(player2Score));
+    draw_text(room_width - 10, 50, "Hp: " + string(player2.hitPoints));
 } else {
-    draw_text(920, 30, "High Score: " + string(player2HighScore));
-    draw_text(920, 50, "Press action to join");
+    draw_text(room_width - 10, 30, "High Score: " + string(player2HighScore));
+    draw_text(room_width - 10, 50, "Press action to join");
 }
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

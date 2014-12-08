@@ -64,9 +64,6 @@ if (arcLength > 0) {
 }
 newY = floorY;
 
-show_debug_message("arcLength = " + string(arcLength));
-show_debug_message(newX);
-
 ///r1 - r2 = y
 //newY -= dist;
 newY -= r - rp;

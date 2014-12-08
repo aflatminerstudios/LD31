@@ -32,8 +32,6 @@ timeToLive = room_speed*1;
 verticalDistance = 30;
 
 alarm[0] = timeToLive;
-
-show_debug_message("objMiniPointsIndicator at (" + string(x) + ", " + string(y) + ").")
 </string>
           </argument>
         </arguments>

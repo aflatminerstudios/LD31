@@ -33,7 +33,7 @@ phy_position_x = scrLoopX(phy_position_x);
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objAnimalGoatBrown">
+    <event eventtype="4" ename="objAnimalGoat">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,11 +55,11 @@ with (other)
 {
     if isHeld == false &amp;&amp; thrownBy != noone
     {
-        thrownBy.points += 100;
+        thrownBy.points += pointValue;
+        cumulativeScore += pointValue;
         var location;
         location = scrLineToCircle(x, y)
-        show_debug_message(thrownBy.color);
-        scrAddMiniPointsIndicator(location[0], location[1], string(100), thrownBy.color);
+        scrAddMiniPointsIndicator(location[0], location[1], string(pointValue), thrownBy.color);
         instance_destroy();
         objControl.animalCount -= 1;
     }
