@@ -193,6 +193,7 @@ if keyboard_check(ord('W')) || keyboard_check(ord('W'))
     {
         airTime++;
         phy_linear_velocity_y = -200;
+        audio_play_sound(sndJump, 110, false);
     }
 }
 </string>

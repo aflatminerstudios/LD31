@@ -11,19 +11,34 @@
       <sound>sound\sndGoat3</sound>
       <sound>sound\sndGoat4</sound>
       <sound>sound\sndGoatFreakedOut</sound>
+      <sound>sound\sndGoldenGoatSpawn</sound>
+      <sound>sound\sndGoatEaten</sound>
     </sounds>
     <sounds name="Player">
       <sound>sound\sndJump</sound>
       <sound>sound\sndHurt</sound>
+      <sound>sound\sndMaleHurt1</sound>
+      <sound>sound\sndMaleHurt2</sound>
+      <sound>sound\sndMaleHurt3</sound>
+      <sound>sound\sndMaleHurt4</sound>
+      <sound>sound\sndFemaleHurt1</sound>
+      <sound>sound\sndFemaleHurt2</sound>
+      <sound>sound\sndFemaleHurt3</sound>
+      <sound>sound\sndFemaleHurt4</sound>
+      <sound>sound\sndDoorAttack1</sound>
+      <sound>sound\sndDoorAttack2</sound>
+      <sound>sound\sndDoorAttack3</sound>
     </sounds>
     <sounds name="Music">
       <sound>sound\musFlatTire</sound>
       <sound>sound\musOmpTire</sound>
     </sounds>
     <sound>sound\sndScoreGoal</sound>
+    <sound>sound\sndNoSound</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprTire</sprite>
+    <sprite>sprites\sprTireForeground</sprite>
     <sprite>sprites\sprFakeFloor</sprite>
     <sprite>sprites\sprBox</sprite>
     <sprite>sprites\sprGoal</sprite>
@@ -133,6 +148,10 @@
   <rooms name="rooms">
     <room>rooms\roomMain</room>
   </rooms>
+  <constants number="2">
+    <constant name="MUSICVOLUME">0.1</constant>
+    <constant name="SOUNDVOLUME">0.3</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

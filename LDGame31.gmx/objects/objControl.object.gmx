@@ -79,6 +79,29 @@ background_hspeed[0] = -0.3;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Start up music
+var snd = audio_play_sound(musOmpTire, 100, true);
+audio_sound_gain(snd, MUSICVOLUME, 0);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="2">
       <action>
@@ -135,15 +158,29 @@ if player1 != noone || player2 != noone
     if (animalCount &lt; animalCountMax)
     {
         var goatType;
-        //goatType = irandom(3)
-        goatType = 0;
+        goatType = choose(0,0,0,0,1,1,1,2,2,3);
         switch (goatType)
         {
             case 0:
                 instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+                audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
+                break;
+            case 1:
+                instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+                audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
+                break;
+            case 2:
+                instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+                audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
+                break;
+            case 3:
+                instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+                audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
+                audio_play_sound(sndGoldenGoatSpawn, 111, false);
                 break;
             default:
                 instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+                audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
                 break;
         }
         animalCount += 1;
@@ -180,6 +217,7 @@ cumulativeScore = 0;
 /// Spawn default animals (1 of each type)
 instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
 instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
 animalCount = 2;
 
 instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objEnemySpider);
@@ -218,13 +256,17 @@ if player1 != noone
     {
         if player2 == noone
         {
+            scrReleaseObject(player1, player1.animal);
             scrCleanUpGame();
         }
+        else {
+            scrReleaseObject(player1, player1.animal);
+        }
+            
         if player1.points &gt; player1HighScore
         {
             player1HighScore = player1.points;
         }
-        scrReleaseObject(player1, player1.animal)
         with (player1)
         {
             instance_destroy();
@@ -378,7 +420,7 @@ if player1 == noone
     player1 = instance_create(irandom(distance), objFakeFloor.y, objPlayerFemale);
     if player2 == noone
     {
-        alarm[0] = 5 * room_speed;
+        alarm[0] = 2 * room_speed;
     }
 }
 </string>
@@ -409,7 +451,7 @@ if player2 == noone
     player2 = instance_create(irandom(distance), objFakeFloor.y, objPlayerMale);
     if player1 == noone
     {
-        alarm[0] = 5 * room_speed;
+        alarm[0] = 2 * room_speed;
     }
 }
 </string>
@@ -440,7 +482,7 @@ if player1 == noone
     player1 = instance_create(irandom(distance), objFakeFloor.y, objPlayerFemale);
     if player2 == noone
     {
-        alarm[0] = 5 * room_speed;
+        alarm[0] = 2 * room_speed;
     }
 }
 </string>
@@ -471,7 +513,7 @@ if player2 == noone
     player2 = instance_create(irandom(distance), objFakeFloor.y, objPlayerMale);
     if player1 == noone
     {
-        alarm[0] = 5 * room_speed;
+        alarm[0] = 2 * room_speed;
     }
 }
 </string>

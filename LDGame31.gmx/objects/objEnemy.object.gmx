@@ -83,6 +83,12 @@ with (other)
 {
     hitPoints -= 1;
 }
+
+if(object_get_name(other.object_index) == "objPlayerMale") {
+  audio_play_sound(choose(sndMaleHurt1,sndMaleHurt2,sndMaleHurt3,sndMaleHurt4), 110, false);
+} else {
+  audio_play_sound(choose(sndFemaleHurt1,sndFemaleHurt2,sndFemaleHurt3,sndFemaleHurt4), 110, false);
+}
 objControl.enemyCount -= 1;
 instance_destroy();
 
@@ -157,6 +163,7 @@ with (other)
         var location;
         location = scrLineToCircle(x, y)
         scrAddMiniPointsIndicator(location[0], location[1], "-" + string(pointValue / 4), c_black);
+        audio_play_sound(sndGoatEaten, 110, false);
         objControl.animalCount -=1;
         instance_destroy();
     }
