@@ -1,9 +1,11 @@
-/// scrAddMiniPointsIndicator(x, y, text);
+/// scrAddMiniPointsIndicator(x, y, text, color);
 
 myX = argument0;
 myY = argument1;
 text = argument2;
+color = argument3;
 
-show_debug_message("Adding objMiniPointsIndicator at (" + string(myX) + ", " + string(myY) + ").")
+
 pointInd = instance_create(myX, myY, objMiniPointsIndicator);
+pointInd.color = color;
 pointInd.text = text;

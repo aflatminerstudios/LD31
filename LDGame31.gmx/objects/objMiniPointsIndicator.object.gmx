@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Set up instance variables
 text = "";
+color = c_white;
 timeToLive = room_speed*1;
 verticalDistance = 30;
 
@@ -84,7 +85,7 @@ var verticalPosition;
 verticalPosition = y - verticalDistance * ((timeToLive - alarm[0])/timeToLive);
   
 draw_text_transformed_colour(x+1,verticalPosition+1,text,1,1,0,c_dkgray,c_dkgray,c_dkgray,c_dkgray,.6);
-draw_text_transformed_colour(x,verticalPosition,text,1,1,0,c_white,c_white,c_white,c_white,1);
+draw_text_transformed_colour(x,verticalPosition,text,1,1,0,color,color,color,color,1);
 
 </string>
           </argument>

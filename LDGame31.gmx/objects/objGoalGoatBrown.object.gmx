@@ -58,7 +58,8 @@ with (other)
         thrownBy.points += 100;
         var location;
         location = scrLineToCircle(x, y)
-        scrAddMiniPointsIndicator(location[0], location[1], string(100));
+        show_debug_message(thrownBy.color);
+        scrAddMiniPointsIndicator(location[0], location[1], string(100), thrownBy.color);
         instance_destroy();
         objControl.animalCount -= 1;
     }
