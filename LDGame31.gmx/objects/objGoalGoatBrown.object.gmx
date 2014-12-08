@@ -53,7 +53,7 @@ phy_position_x = scrLoopX(phy_position_x);
             <string>/// Goal!
 with (other) 
 {
-    if isHeld == false
+    if isHeld == false &amp;&amp; thrownBy != noone
     {
         thrownBy.points += 100;
         instance_destroy();
