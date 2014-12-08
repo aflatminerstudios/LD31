@@ -408,6 +408,7 @@ if player2 == noone
           <argument>
             <kind>1</kind>
             <string>/// Display score and player health
+draw_set_halign(fa_left);
 draw_text(10, 10, "Player 1");
 if (player1 != noone)
 {
@@ -418,15 +419,17 @@ if (player1 != noone)
     draw_text(10, 50, "Press action to join");
 }
 
-draw_text(920, 10, "Player 2");
+draw_set_halign(fa_right);
+draw_text(room_width - 10, 10, "Player 2");
 if (player2 != noone)
 {
-    draw_text(920, 30, "Score: " + string(player2Score));
-    draw_text(920, 50, "Hp: " + string(player2.hitPoints));
+    draw_text(room_width - 10, 30, "Score: " + string(player2Score));
+    draw_text(room_width - 10, 50, "Hp: " + string(player2.hitPoints));
 } else {
-    draw_text(920, 30, "High Score: " + string(player2HighScore));
-    draw_text(920, 50, "Press action to join");
+    draw_text(room_width - 10, 30, "High Score: " + string(player2HighScore));
+    draw_text(room_width - 10, 50, "Press action to join");
 }
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>
