@@ -4,7 +4,24 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Goats">
+      <sound>sound\sndGoat1</sound>
+      <sound>sound\sndGoat2</sound>
+      <sound>sound\sndGoat3</sound>
+      <sound>sound\sndGoat4</sound>
+      <sound>sound\sndGoatFreakedOut</sound>
+    </sounds>
+    <sounds name="Player">
+      <sound>sound\sndJump</sound>
+      <sound>sound\sndHurt</sound>
+    </sounds>
+    <sounds name="Music">
+      <sound>sound\musFlatTire</sound>
+      <sound>sound\musOmpTire</sound>
+    </sounds>
+    <sound>sound\sndScoreGoal</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprTire</sprite>
     <sprite>sprites\sprFakeFloor</sprite>
