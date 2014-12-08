@@ -71,12 +71,15 @@ player2Score = 0;
           <argument>
             <kind>1</kind>
             <string>/// Enemy Spawn Timer
-if (enemyCount &lt; 5)
+if player1 != noone || player2 != noone
 {
-    instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
-    enemyCount += 1;
+    if (enemyCount &lt; 5)
+    {
+        instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
+        enemyCount += 1;
+    }
+    alarm[2] = irandom(10) * room_speed;
 }
-alarm[2] = irandom(10) * room_speed;
 </string>
           </argument>
         </arguments>
@@ -100,12 +103,15 @@ alarm[2] = irandom(10) * room_speed;
           <argument>
             <kind>1</kind>
             <string>/// Animal Spawn Timer
-if (animalCount &lt; 5)
+if player1 != noone || player2 != noone
 {
-    instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
-    animalCount += 1;
+    if (animalCount &lt; 5)
+    {
+        instance_create(irandom(distance), objFakeFloor.y, objAnimalDuck);
+        animalCount += 1;
+    }
+    alarm[1] = irandom(10) * room_speed;
 }
-alarm[1] = irandom(10) * room_speed;
 </string>
           </argument>
         </arguments>
@@ -189,6 +195,10 @@ if player2 != noone
         if player1 == noone
         {
             scrCleanUpGame();
+        }
+        with (player2)
+        {
+            instance_destroy();
         }
         player2 = noone;
     }
