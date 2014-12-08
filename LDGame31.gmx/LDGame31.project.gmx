@@ -50,6 +50,7 @@
     <script>scripts\scrCalcTheta.gml</script>
     <scripts name="Animals">
       <script>scripts\scrThrowDuck.gml</script>
+      <script>scripts\scrThrowGoat.gml</script>
       <script>scripts\scrNearbyEnemyDirection.gml</script>
       <script>scripts\scrSetupGoatGoals.gml</script>
       <script>scripts\scrCleanUpGame.gml</script>
