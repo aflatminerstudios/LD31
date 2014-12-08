@@ -164,8 +164,8 @@ instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
 enemyCount = 1;
 
 /// Set spawn timers
-alarm[1] = irandom(10) * room_speed;
-alarm[2] = irandom(10) * room_speed;
+alarm[1] = irandom_range(1, animalSpawnTimeMax) * room_speed;
+alarm[2] = irandom_range(1, enemySpawnTimeMax) * room_speed;
 </string>
           </argument>
         </arguments>

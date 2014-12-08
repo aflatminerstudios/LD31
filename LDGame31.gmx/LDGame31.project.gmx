@@ -67,6 +67,7 @@
   <objects name="objects">
     <object>objects\objBox</object>
     <object>objects\objBox2</object>
+    <object>objects\objControl</object>
     <object>objects\objDynamicParent</object>
     <object>objects\objStaticParent</object>
     <object>objects\objFakeFloor</object>
@@ -92,10 +93,9 @@
       <object>objects\objGoalGoatBrown</object>
     </objects>
     <objects name="Items">
-      <object>objects\objScreen</object>
       <object>objects\objItem</object>
+      <object>objects\objScreen</object>
     </objects>
-    <object>objects\objControl</object>
     <objects name="Players">
       <object>objects\objPlayer</object>
       <object>objects\objPlayerMale</object>
