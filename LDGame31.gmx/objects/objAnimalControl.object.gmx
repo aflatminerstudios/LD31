@@ -30,17 +30,9 @@
 animalCount = 0;
 spawnTimer = 0;
 
-var distance;
-distance = objFakeFloor.endX - objFakeFloor.beginX;
-
 threeGoalPosX[0] = distance / 3;
 threeGoalPosX[1] = distance * 2 / 3;
 threeGoalPosX[2] = distance;
-
-fourGoalPosX[0] = distance / 4;
-fourGoalPosX[1] = distance / 2;
-fourGoalPosX[2] = distance * 3 / 4;
-fourGoalPosX[3] = distance;
 
 instance_create(threeGoalPosX[0], objFakeFloor.y - 96, objGoalDuck);
 instance_create(threeGoalPosX[1], objFakeFloor.y - 96, objGoalDuck);
