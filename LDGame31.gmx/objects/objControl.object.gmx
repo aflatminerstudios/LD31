@@ -28,8 +28,17 @@
             <string>///setup variables
 
 globalvar drawToLine;
+globalvar distance;
 
 drawToLine = false;
+
+distance = objFakeFloor.endX - objFakeFloor.beginX;
+
+globalvar player1;
+globalvar player2;
+
+player1 = instance_create(irandom(distance), 0, objPlayerFemale);
+player2 = instance_create(irandom(distance), 0, objPlayerMale);
 </string>
           </argument>
         </arguments>
@@ -53,8 +62,16 @@ drawToLine = false;
           <argument>
             <kind>1</kind>
             <string>/// Display score and player health
-draw_text(10, 10, "score: " + string(score));
-draw_text(10, 30, "hp: " + string(objPlayer.hitPoints));
+draw_text(10, 10, "Player 1");
+draw_text(10, 30, "Score: " + string(player1.score));
+draw_text(10, 50, "Hp: " + string(player1.hitPoints));
+
+if (player2 != noone)
+{
+    draw_text(920, 10, "Player 2");
+    draw_text(920, 30, "Score: " + string(player2.score));
+    draw_text(920, 50, "Hp: " + string(player2.hitPoints));
+}
 </string>
           </argument>
         </arguments>

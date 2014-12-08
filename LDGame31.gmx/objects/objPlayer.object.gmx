@@ -31,7 +31,9 @@ airTime = 0;
 animal = noone;
 item = noone; // default to screen door
 facing = scrRandomDirection();
+
 hitPoints = 5;
+score = 0;
 
 heldSpriteOffset = 40;
 lastAnimal = noone;

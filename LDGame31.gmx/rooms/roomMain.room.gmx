@@ -54,9 +54,8 @@
     <instance objName="objFakeFloor" x="0" y="352" name="inst_33A975E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCircle" x="496" y="304" name="inst_56A324D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objControl" x="16" y="32" name="inst_66C1730B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayerMale" x="256" y="256" name="inst_051AAE47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAnimalControl" x="32" y="32" name="inst_3BA396C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemyControl" x="48" y="32" name="inst_5BA863F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objAnimalControl" x="32" y="32" name="inst_3BA396C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

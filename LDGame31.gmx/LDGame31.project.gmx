@@ -15,12 +15,16 @@
       <sprite>sprites\sprDuckHeld</sprite>
       <sprite>sprites\sprDuckThrown</sprite>
     </sprites>
-    <sprites name="Spider">
-      <sprite>sprites\sprSpider</sprite>
+    <sprites name="PlayerFemale">
+      <sprite>sprites\sprPlayerFemaleIdle</sprite>
+      <sprite>sprites\sprPlayerFemaleRun</sprite>
     </sprites>
     <sprites name="PlayerMale">
       <sprite>sprites\sprPlayerMaleIdle</sprite>
       <sprite>sprites\sprPlayerMaleRun</sprite>
+    </sprites>
+    <sprites name="Spider">
+      <sprite>sprites\sprSpider</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -75,6 +79,7 @@
     <objects name="Players">
       <object>objects\objPlayer</object>
       <object>objects\objPlayerMale</object>
+      <object>objects\objPlayerFemale</object>
     </objects>
   </objects>
   <rooms name="rooms">
