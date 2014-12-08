@@ -273,7 +273,7 @@ if player2 != noone
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Player score updating
+            <string>/// Player score updating and difficulty
 
 if (player1 != noone)
 {
@@ -286,9 +286,12 @@ if (player2 != noone)
 }
 
 
-if cumulativeScore &gt;= 1000
+if cumulativeScore &gt;= 1500
 {
-
+    enemySpawnTimeMax = 10;
+    animalSpawnTimeMax = 5;
+    enemyCountMax = 5;
+    animalCountMax = 5;
 }
 else if cumulativeScore &gt;= 1000
 {
@@ -299,11 +302,10 @@ else if cumulativeScore &gt;= 1000
 }
 else 
 {
-enemySpawnTimeMax = 10;
-animalSpawnTimeMax = 5;
-enemyCountMax = 3;
-animalCountMax = 5;
-
+    enemySpawnTimeMax = 10;
+    animalSpawnTimeMax = 5;
+    enemyCountMax = 3;
+    animalCountMax = 5;
 }
 </string>
           </argument>
