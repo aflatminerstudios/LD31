@@ -123,7 +123,7 @@ if isHeld
           <argument>
             <kind>1</kind>
             <string>/// Reset Idle Animation
-if !isHeld
+if !isHeld &amp;&amp; thrownBy != noone
 {
     pauseAI = false;
     thrownBy = noone;

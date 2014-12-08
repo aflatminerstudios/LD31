@@ -36,7 +36,7 @@ facing = scrRandomDirection();
 pointValue = 100;
 
 pauseAI = false;
-alarm[1] = (2 + irandom(3) * room_speed);
+alarm[1] = (2 + irandom(3)) * room_speed;
 
 spriteIdle[0] = sprGoatBrownIdle0;
 spriteIdle[1] = sprGoatBrownIdle1;
@@ -46,7 +46,7 @@ spriteThrown = sprGoatBrownHeld;
 
 throw = scrThrowGoat;
 
-image_speed = 5 / room_speed;
+image_speed = 10.0 / room_speed;
 </string>
           </argument>
         </arguments>

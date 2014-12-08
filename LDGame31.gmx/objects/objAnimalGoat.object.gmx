@@ -36,7 +36,7 @@ facing = scrRandomDirection();
 pointValue = 100;
 
 pauseAI = false;
-alarm[1] = (2 + irandom(3) * room_speed);
+alarm[1] = (2 + irandom(3)) * room_speed;
 
 spriteIdle[0] = 0;
 spriteIdle[1] = 0;
@@ -46,7 +46,7 @@ spriteThrown = 0;
 
 throw = scrThrowGoat;
 
-image_speed = 5 / room_speed;
+image_speed = 10 / room_speed;
 </string>
           </argument>
         </arguments>
@@ -101,6 +101,7 @@ pauseAI = false
 
 /// Set walk timer
 facing = scrRandomDirection();
+sprite_index = spriteWalk;
 alarm[1] = (2 + irandom(3)) * room_speed;
 </string>
           </argument>
@@ -197,7 +198,6 @@ if !isHeld &amp;&amp; thrownBy == noone
         phy_linear_velocity_y = 0;
         sprite_index = spriteThrown;
     }
-    
     if !pauseAI
     {
         phy_linear_velocity_x = facing * 50;
@@ -226,7 +226,7 @@ if !isHeld &amp;&amp; thrownBy == noone
           <argument>
             <kind>1</kind>
             <string>/// Reset Idle Animation
-if !isHeld
+if !isHeld &amp;&amp; thrownBy != noone
 {
     pauseAI = false;
     thrownBy = noone;
