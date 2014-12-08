@@ -51,7 +51,6 @@
     <object>objects\objDynamicParent</object>
     <object>objects\objStaticParent</object>
     <object>objects\objFakeFloor</object>
-    <object>objects\objPlayer</object>
     <objects name="Circle">
       <object>objects\objCircle</object>
       <object>objects\objCircleStart</object>
@@ -73,6 +72,10 @@
     <object>objects\objControl</object>
     <object>objects\objAnimalControl</object>
     <object>objects\objEnemyControl</object>
+    <objects name="Players">
+      <object>objects\objPlayer</object>
+      <object>objects\objPlayerMale</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>
