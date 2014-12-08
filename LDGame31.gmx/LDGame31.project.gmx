@@ -37,6 +37,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scrCleanUpGame.gml</script>
     <scripts name="Utility">
       <script>scripts\scrLoopX.gml</script>
       <script>scripts\scrCalcRotation.gml</script>
@@ -53,7 +54,6 @@
       <script>scripts\scrThrowGoat.gml</script>
       <script>scripts\scrNearbyEnemyDirection.gml</script>
       <script>scripts\scrSetupGoatGoals.gml</script>
-      <script>scripts\scrCleanUpGame.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\scrPlayerAttack.gml</script>
@@ -87,8 +87,6 @@
       <object>objects\objGoalGoatBrown</object>
     </objects>
     <object>objects\objControl</object>
-    <object>objects\objAnimalControl</object>
-    <object>objects\objEnemyControl</object>
     <objects name="Players">
       <object>objects\objPlayer</object>
       <object>objects\objPlayerMale</object>

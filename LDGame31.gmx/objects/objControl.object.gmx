@@ -78,7 +78,7 @@ if player1 != noone || player2 != noone
         instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
         enemyCount += 1;
     }
-    alarm[2] = irandom(10) * room_speed;
+    alarm[2] = (1 + irandom(10)) * room_speed;
 }
 </string>
           </argument>
@@ -121,7 +121,7 @@ if player1 != noone || player2 != noone
         }
         animalCount += 1;
     }
-    alarm[1] = irandom(10) * room_speed;
+    alarm[1] = (1 + irandom(10)) * room_speed;
 }
 </string>
           </argument>
