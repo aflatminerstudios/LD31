@@ -34,11 +34,183 @@ drawToLine = false;
 
 distance = objFakeFloor.endX - objFakeFloor.beginX;
 
-globalvar player1;
-globalvar player2;
+player1 = noone;
+player2 = noone;
+animalController = noone;
+enemyController = noone;
 
-player1 = instance_create(irandom(distance), 0, objPlayerFemale);
-player2 = instance_create(irandom(distance), 0, objPlayerMale);
+player1Score = 0;
+player2Score = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Start the game
+animalController = instance_create(0, 0, objAnimalControl);
+enemyController = instance_create(0, 0, objEnemyControl);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Check player death
+
+if player1 != noone
+{
+    if player1.hitPoints &lt;= 0
+    {
+        if player2 == noone
+        {
+            // Clear game
+
+        }
+        with (player1)
+        {
+            instance_destroy();
+        }
+        player1 = noone;
+    }
+}
+
+if player2 != noone
+{
+    if player2.hitPoints &lt;= 0
+    {
+        if player1 == noone
+        {
+            // Clear game
+        }
+        player2 = noone;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Player score updating
+
+if (player1 != noone)
+{
+    player1Score = player1.points;
+}
+
+if (player2 != noone)
+{
+    player2Score = player2.points;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="87">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Load player 1 into game
+if player1 == noone
+{
+    player1 = instance_create(irandom(distance), 0, objPlayerFemale);
+    if player2 == noone
+    {
+        alarm[0] = 10 * room_speed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="38">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Load player 2 into the game
+if player2 == noone
+{
+    player2 = instance_create(irandom(distance), 0, objPlayerMale);
+    if player1 == noone
+    {
+        alarm[0] = 10 * room_speed;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -63,14 +235,21 @@ player2 = instance_create(irandom(distance), 0, objPlayerMale);
             <kind>1</kind>
             <string>/// Display score and player health
 draw_text(10, 10, "Player 1");
-draw_text(10, 30, "Score: " + string(player1.score));
-draw_text(10, 50, "Hp: " + string(player1.hitPoints));
+if (player1 != noone)
+{
+    draw_text(10, 30, "Score: " + string(player1Score));
+    draw_text(10, 50, "Hp: " + string(player1.hitPoints));
+} else {
+    draw_text(10, 50, "Press action to join");
+}
 
+draw_text(920, 10, "Player 2");
 if (player2 != noone)
 {
-    draw_text(920, 10, "Player 2");
-    draw_text(920, 30, "Score: " + string(player2.score));
+    draw_text(920, 30, "Score: " + string(player2Score));
     draw_text(920, 50, "Hp: " + string(player2.hitPoints));
+} else {
+    draw_text(920, 50, "Press action to join");
 }
 </string>
           </argument>
@@ -94,7 +273,8 @@ if (player2 != noone)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (drawToLine) {
+            <string>/// Switch draw to line
+if (drawToLine) {
     drawToLine = false;
     /*
     objFakeFloor.phy_position_y += 1024;
