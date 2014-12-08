@@ -224,6 +224,7 @@ if player1 != noone
         {
             player1HighScore = player1.points;
         }
+        scrReleaseObject(player1, player1.animal)
         with (player1)
         {
             instance_destroy();
@@ -244,6 +245,7 @@ if player2 != noone
         {
             player2HighScore = player2.points;
         }
+        scrReleaseObject(player2, player2.animal)
         with (player2)
         {
             instance_destroy();
