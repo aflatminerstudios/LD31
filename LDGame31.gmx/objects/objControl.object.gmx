@@ -30,6 +30,11 @@
 globalvar drawToLine;
 globalvar distance;
 
+enemySpawnTimeMax = 5;
+animalSpawnTimeMax = 5;
+enemyCountMax = 5;
+animalCountMax = 5;
+
 randomize();
 
 drawToLine = false;
@@ -75,12 +80,12 @@ player2Score = 0;
             <string>/// Enemy Spawn Timer
 if player1 != noone || player2 != noone
 {
-    if (enemyCount &lt; 5)
+    if (enemyCount &lt; enemyCountMax)
     {
         instance_create(irandom(distance), objFakeFloor.y, objEnemySpider);
         enemyCount += 1;
     }
-    alarm[2] = (1 + irandom(10)) * room_speed;
+    alarm[2] = (irandom_range(1, enemySpawnTimeMax)) * room_speed;
 }
 </string>
           </argument>
@@ -107,7 +112,7 @@ if player1 != noone || player2 != noone
             <string>/// Animal Spawn Timer
 if player1 != noone || player2 != noone
 {
-    if (animalCount &lt; 5)
+    if (animalCount &lt; animalCountMax)
     {
         var goatType;
         //goatType = irandom(3)
@@ -123,7 +128,7 @@ if player1 != noone || player2 != noone
         }
         animalCount += 1;
     }
-    alarm[1] = (1 + irandom(10)) * room_speed;
+    alarm[1] = (irandom_range(1, animalSpawnTimeMax)) * room_speed;
 }
 </string>
           </argument>
