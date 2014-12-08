@@ -28,6 +28,10 @@
       <sound>sound\sndDoorAttack1</sound>
       <sound>sound\sndDoorAttack2</sound>
       <sound>sound\sndDoorAttack3</sound>
+      <sound>sound\sndDoorMiss1</sound>
+      <sound>sound\sndDoorMiss2</sound>
+      <sound>sound\sndDoorMiss3</sound>
+      <sound>sound\sndPlayerJoin</sound>
     </sounds>
     <sounds name="Music">
       <sound>sound\musFlatTire</sound>
