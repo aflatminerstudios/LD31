@@ -17,4 +17,3 @@ with (objEnemySpider)
 {
     instance_destroy();
 }
-
