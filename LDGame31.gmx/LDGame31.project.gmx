@@ -69,6 +69,7 @@
     </sprites>
     <sprites name="Spider">
       <sprite>sprites\sprSpider</sprite>
+      <sprite>sprites\sprSpiderStunned</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">

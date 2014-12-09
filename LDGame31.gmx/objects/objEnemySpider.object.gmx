@@ -56,6 +56,7 @@ image_speed = 10 / room_speed;
           <argument>
             <kind>1</kind>
             <string>stunned = false;
+image_index = sprSpiderStunned;
 </string>
           </argument>
         </arguments>
@@ -198,9 +199,9 @@ scrDrawToCircle(self.id);
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>144,64</point>
-    <point>176,64</point>
-    <point>176,88</point>
-    <point>144,88</point>
+    <point>128,64</point>
+    <point>192,64</point>
+    <point>192,80</point>
+    <point>128,80</point>
   </PhysicsShapePoints>
 </object>

@@ -52,6 +52,8 @@ player1HighScore = 0;
 player2HighScore = 0;
 cumulativeScore = 0;
 
+drawTitle = true;
+
 randomize();
 </string>
           </argument>
