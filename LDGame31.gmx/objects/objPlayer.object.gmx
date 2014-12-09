@@ -38,9 +38,11 @@ score = 0;
 heldSpriteOffset = 40;
 lastAnimal = noone;
 collidedAgain = false;
+swinging = false;
 
 spriteIdle = 0;
 spriteRun = 0;
+spriteScreen = 0;
 
 image_speed = 5 / room_speed;
 </string>

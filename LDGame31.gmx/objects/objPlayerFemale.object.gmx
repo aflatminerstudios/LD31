@@ -39,11 +39,38 @@ hitPoints = 5;
 heldSpriteOffset = 35;
 lastAnimal = noone;
 collidedAgain = false;
+swinging = false;
 
 spriteIdle = sprPlayerFemaleIdle;
 spriteRun = sprPlayerFemaleRun;
+spriteScreen = sprPlayerFemaleScreen;
 
 image_speed = 8 / room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///unset swinging
+
+swinging = false;
 </string>
           </argument>
         </arguments>
@@ -148,24 +175,24 @@ if onGround
     airAcceleration = 0.5;
 }
 
-if keyboard_check_pressed(ord('A')) || keyboard_check(ord('A'))
-{
-    facing = -1;
-    sprite_index = spriteRun;
-    phy_linear_velocity_x = facing * 175;
-}
-else if keyboard_check_pressed(ord('D')) || keyboard_check(ord('D'))
-{
-    facing = 1;
-    sprite_index = spriteRun;
-    phy_linear_velocity_x = facing * 175;
-}
-else
-{
-    sprite_index = spriteIdle;
-}
-
-
+if (!swinging) {
+    if keyboard_check_pressed(ord('A')) || keyboard_check(ord('A'))
+    {
+        facing = -1;
+        sprite_index = spriteRun;
+        phy_linear_velocity_x = facing * 175;
+    }
+    else if keyboard_check_pressed(ord('D')) || keyboard_check(ord('D'))
+    {
+        facing = 1;
+        sprite_index = spriteRun;
+        phy_linear_velocity_x = facing * 175;
+    }
+    else
+    {
+        sprite_index = spriteIdle;
+    }
+}    
 </string>
           </argument>
         </arguments>
@@ -222,6 +249,43 @@ if !collidedAgain &amp;&amp; lastAnimal != noone
 {
     lastAnimal = noone;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//See if a monster is in front of player
+    var x1 = phy_position_x;
+    var y1 = phy_position_y - item.screenWidth / 2;
+    var x2 = x1 + item.screenWidth * facing;
+    var y2 = y1 + item.screenWidth;
+    var enemy = collision_rectangle(x1, y1, x2, y2, objEnemy, false, true);
+    
+    if (enemy != noone) {
+        show_debug_message("It's a hit!");
+        audio_play_sound(choose(sndDoorAttack1,sndDoorAttack2,sndDoorAttack3), 110, false);
+        enemy.stunned = true;
+        enemy.alarm[0] = 3 * room_speed;
+        enemy.phy_linear_velocity_x = 0;
+    } else {
+        show_debug_message("And a miss!");
+        audio_play_sound(choose(sndDoorMiss1,sndDoorMiss2,sndDoorMiss3), 110, false);
+    }
 </string>
           </argument>
         </arguments>
