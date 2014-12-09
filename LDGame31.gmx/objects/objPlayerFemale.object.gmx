@@ -29,7 +29,7 @@
 onGround = true;
 airTime = 0;
 animal = noone;
-item = instance_create(x,y,objScreen);  // default to screen door
+item = instance_create(x,y,objScreen); // default to screen door
 facing = scrRandomDirection();
 color = c_red;
 

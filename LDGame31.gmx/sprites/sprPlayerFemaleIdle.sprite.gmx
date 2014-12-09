@@ -7,18 +7,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>15</bbox_left>
-  <bbox_right>53</bbox_right>
-  <bbox_top>6</bbox_top>
-  <bbox_bottom>58</bbox_bottom>
+  <bbox_left>10</bbox_left>
+  <bbox_right>48</bbox_right>
+  <bbox_top>1</bbox_top>
+  <bbox_bottom>53</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>75</width>
-  <height>65</height>
+  <width>65</width>
+  <height>55</height>
   <frames>
     <frame index="0">images\sprPlayerFemaleIdle_0.png</frame>
     <frame index="1">images\sprPlayerFemaleIdle_1.png</frame>
