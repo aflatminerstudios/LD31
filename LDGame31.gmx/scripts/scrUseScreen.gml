@@ -25,5 +25,6 @@ with (player) {
         enemy.phy_linear_velocity_x = 0;
     } else {
         show_debug_message("And a miss!");
+        audio_play_sound(choose(sndDoorMiss1,sndDoorMiss2,sndDoorMiss3), 110, false);
     }
 }

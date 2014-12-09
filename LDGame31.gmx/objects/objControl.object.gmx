@@ -547,7 +547,7 @@ if player2 == noone
             <string>/// Display score and player health
 draw_set_halign(fa_left);
 draw_set_font(fntStatus);
-draw_text(10, 10, "Player 1");
+draw_text(10, 10, "Emma");
 if (player1 != noone)
 {
     draw_text(10, 30, "Score: " + string(player1Score));
@@ -558,7 +558,7 @@ if (player1 != noone)
 }
 
 draw_set_halign(fa_right);
-draw_text(room_width - 10, 10, "Player 2");
+draw_text(room_width - 10, 10, "Marcel");
 if (player2 != noone)
 {
     draw_text(room_width - 10, 30, "Score: " + string(player2Score));
