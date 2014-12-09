@@ -73,6 +73,8 @@
       <sprite>sprites\sprSpider</sprite>
       <sprite>sprites\sprSpiderStunned</sprite>
     </sprites>
+    <sprite>sprites\sprCredits</sprite>
+    <sprite>sprites\sprTitle</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\backSky</background>
@@ -151,6 +153,8 @@
       <object>objects\objPlayerFemale</object>
     </objects>
     <object>objects\objMiniPointsIndicator</object>
+    <object>objects\objCredits</object>
+    <object>objects\objTitle</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomMain</room>

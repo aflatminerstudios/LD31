@@ -87,7 +87,6 @@ var distanceLeft;
 
 // Check if stunned by player
 if (!stunned) {
-  show_debug_message("Spider not stunned.");
     /// player is to the right of the enemy
     if (objPlayer.phy_position_x &gt; phy_position_x)
     {
@@ -114,8 +113,6 @@ if (!stunned) {
         phy_linear_velocity_x = facing * 30;
     }    
 
-} else {
-    show_debug_message("Spider is currently not stunned.");
 }
 
 phy_position_x = scrLoopX(phy_position_x);
