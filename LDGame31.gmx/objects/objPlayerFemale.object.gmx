@@ -40,6 +40,7 @@ heldSpriteOffset = 35;
 lastAnimal = noone;
 collidedAgain = false;
 swinging = false;
+swingCount = 0;
 
 spriteIdle = sprPlayerFemaleIdle;
 spriteRun = sprPlayerFemaleRun;
@@ -269,8 +270,8 @@ if !collidedAgain &amp;&amp; lastAnimal != noone
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//See if a monster is in front of player
-if(swinging){
+            <string>///See if a monster is in front of player
+if(swinging &amp;&amp; swingCount == 0){
     var x1 = phy_position_x;
     var y1 = phy_position_y - item.screenWidth / 2;
     var x2 = x1 + item.screenWidth * facing;
@@ -287,7 +288,8 @@ if(swinging){
         show_debug_message("And a miss!");
         audio_play_sound(choose(sndDoorMiss1,sndDoorMiss2,sndDoorMiss3), 110, false);
     }
-  }
+    swingCount +=1 ;
+}
 </string>
           </argument>
         </arguments>
