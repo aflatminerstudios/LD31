@@ -21,6 +21,7 @@ with (player) {
         show_debug_message("It's a hit!");
         audio_play_sound(choose(sndDoorAttack1,sndDoorAttack2,sndDoorAttack3), 110, false);
         enemy.stunned = true;
+        enemy.sprite_index = sprSpiderStunned;
         enemy.alarm[0] = 3 * room_speed;
         enemy.phy_linear_velocity_x = 0;
     } else {
