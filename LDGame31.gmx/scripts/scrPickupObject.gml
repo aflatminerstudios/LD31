@@ -8,6 +8,9 @@ if(actorInstance == noone || objectInstance == noone)
   return noone;
 if(!instance_exists(actorInstance) || !instance_exists(objectInstance))
   return noone;
+  
+if(objectInstance.currentHolder != noone || objectInstance.isHeld == true)
+  return noone;
 
 objectInstance.currentHolder = actorInstance;
 objectInstance.isHeld = true;
