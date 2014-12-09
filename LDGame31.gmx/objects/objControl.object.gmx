@@ -208,7 +208,7 @@ if player1 != noone || player2 != noone
     if (animalCount &lt; animalCountMax)
     {
         var goatType;
-        goatType = choose(0,0,0,0,1,1,1,2,2,3);
+        goatType = choose(0,0,0,0,0,0,1,1,1,1,2,2,2,2,3);
         switch (goatType)
         {
             case 0:
@@ -224,7 +224,7 @@ if player1 != noone || player2 != noone
                 audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
                 break;
             case 3:
-                instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatBrown);
+                instance_create(scrFindEmptySpawnPoint(), objFakeFloor.y, objAnimalGoatGolden);
                 audio_play_sound(choose(sndGoat1,sndGoat2,sndGoat3,sndGoat4), 110, false);
                 audio_play_sound(sndGoldenGoatSpawn, 111, false);
                 break;
@@ -619,7 +619,7 @@ if (player1 != noone)
     draw_text(10, 50, "Press Action To Join!");
 }
 
-draw_text(10, 530, "Move - A/S");
+draw_text(10, 530, "Move - A/D");
 draw_text(10, 550, "Jump - W");
 draw_text(10, 570, "Action - Space or S");
 

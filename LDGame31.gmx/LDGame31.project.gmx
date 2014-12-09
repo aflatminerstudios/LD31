@@ -58,6 +58,12 @@
         <sprite>sprites\sprGoatBrownWalk</sprite>
         <sprite>sprites\sprGoatBrownHeld</sprite>
       </sprites>
+      <sprites name="Golden">
+        <sprite>sprites\sprGoatGoldenIdle0</sprite>
+        <sprite>sprites\sprGoatGoldenIdle1</sprite>
+        <sprite>sprites\sprGoatGoldenWalk</sprite>
+        <sprite>sprites\sprGoatGoldenHeld</sprite>
+      </sprites>
     </sprites>
     <sprites name="PlayerFemale">
       <sprite>sprites\sprPlayerFemaleIdle</sprite>
@@ -131,6 +137,7 @@
       <object>objects\objAnimal</object>
       <object>objects\objAnimalGoat</object>
       <object>objects\objAnimalGoatBrown</object>
+      <object>objects\objAnimalGoatGolden</object>
       <object>objects\objOldSchoolAnimal</object>
       <object>objects\objAnimalDuck</object>
     </objects>

@@ -380,8 +380,8 @@ if (item != noone) {
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>16,8</point>
-    <point>64,8</point>
-    <point>64,56</point>
-    <point>16,56</point>
+    <point>52,8</point>
+    <point>52,48</point>
+    <point>16,48</point>
   </PhysicsShapePoints>
 </object>

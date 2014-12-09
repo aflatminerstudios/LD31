@@ -372,8 +372,8 @@ scrDrawToCircle(self.id);
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>16,8</point>
-    <point>64,8</point>
-    <point>64,56</point>
-    <point>16,56</point>
+    <point>56,8</point>
+    <point>56,48</point>
+    <point>16,48</point>
   </PhysicsShapePoints>
 </object>
