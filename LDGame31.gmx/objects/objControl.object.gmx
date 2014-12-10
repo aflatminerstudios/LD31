@@ -661,20 +661,22 @@ draw_set_halign(fa_left);
           <argument>
             <kind>1</kind>
             <string>/// Switch draw to line
+
 if (drawToLine) {
-    drawToLine = false;
+    //drawToLine = false;
     /*
     objFakeFloor.phy_position_y += 1024;
     y += 1024;
     */
 }    
 else {
-    drawToLine = true;
+    //drawToLine = true;
     /*
     objFakeFloor.phy_position_y -= 1024;
     y -= 1024;
     */
 }
+
 </string>
           </argument>
         </arguments>
